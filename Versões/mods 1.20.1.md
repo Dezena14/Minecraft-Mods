@@ -1,22 +1,23 @@
 # Lista de Mods Minecraft 1.20.1
 
-- Better F3 ✔
-- Fabric api ✔
-- fabric ✔
-- carpet ✔ 
-- lambdynamiclights ✔
-- litematic ✔
-- lithium ✔
-- logical zoom ✔
-- malilib ✔
-- minihud ✔
-- modmenu ✔
-- phosphor (atualização na light engine tornou o mod obsoleto) 
-- sodium ✔
-- worldedit ✔
-- InventorySorter ✔ 
-- cloth-config ✔
-- Tweakeroo ✔
-- itemscroller ✔
+- Better F3
+- Carpet
+- Cloth config
+- Fabric api
+- Fabric loader
+- InventorySorter
+- itemscroller
+- Lambdynamiclights
+- Litematica
+- Lithium
+- Logical zoom
+- Malilib
+- Minihud
+- Modmenu
+- Sodium
+- Tweakeroo
+- Worldedit
+
+[**Clique aqui para acessar a lista com todos os mods**](../todosMods.md)
 
 [Clique aqui para voltar ao início.](../README.md)

@@ -1,5 +1,7 @@
 # Lista de Mods Minecraft 1.20.1
 
+Lista anterior | [Lista seguinte](.mods%201.20.1.md)
+
 - Better F3
 - Carpet
 - Cloth config

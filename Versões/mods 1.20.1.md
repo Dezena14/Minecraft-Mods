@@ -1,6 +1,6 @@
 # Lista de Mods Minecraft 1.20.1
 
-[Lista anterior](mods%201.19.3.md) | Lista seguinte
+[Lista anterior](mods%201.19.3.md) | [Lista seguinte](mods%201.20.4.md)
 
 - Better F3
 - Carpet

@@ -4,6 +4,8 @@ Este repositório é composto por listas de mods de Minecraft divididas entre as
 
 ## Listas
 
+- [Mods 1.21.4](./Vers%C3%B5es/mods%201.21.4.md)
+- [Mods 1.21.0](./Vers%C3%B5es/mods%201.21.0.md)
 - [Mods 1.20.4](./Vers%C3%B5es/mods%201.20.4.md)
 - [Mods 1.20.1](./Vers%C3%B5es/mods%201.20.1.md)
 - [Mods 1.19.3](./Vers%C3%B5es/mods%201.19.3.md)

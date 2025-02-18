@@ -1,6 +1,8 @@
 # Lista de Mods Minecraft 1.20.4
 
-[Lista anterior](mods%201.20.1.md) | Lista seguinte
+[Lista anterior](mods%201.20.1.md) | [Lista seguinte](mods%201.21.0.md)
+
+[Clique aqui para voltar ao início](../README.md)
 
 - Better F3
 - Carpet

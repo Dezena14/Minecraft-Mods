@@ -2,6 +2,8 @@
 
 [Lista anterior](mods%201.19.3.md) | [Lista seguinte](mods%201.20.4.md)
 
+[Clique aqui para voltar ao início](../README.md)
+
 - Better F3
 - Carpet
 - Cloth config

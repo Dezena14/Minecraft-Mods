@@ -1,3 +1,5 @@
+[Clique aqui para voltar ao início](../README.md)
+
 | Mod                  | Repositório | Download |
 |----------------------|-------------|----------|
 | BetterF3             | [Repositório](https://github.com/cominixo/BetterF3) | [Download](https://www.curseforge.com/minecraft/mc-mods/betterf3) |
@@ -23,3 +25,18 @@
 | Tweakeroo            | [Repositório](https://github.com/maruohon/tweakeroo) | [Download](https://www.curseforge.com/minecraft/mc-mods/tweakeroo) |
 | Worldedit            | [Repositório](https://github.com/enginehub/WorldEdit) | [Download](https://www.curseforge.com/minecraft/mc-mods/worldedit) |
 | Yet-another-config-lib | [Repositório](https://github.com/isXander/YetAnotherConfigLib) | [Download](https://modrinth.com/mod/yacl) |
+| Inspecio             | [Repositório](https://github.com/Queerbric/Inspecio) | [Download](https://modrinth.com/mod/inspecio) |
+| Fabrishot            | [Repositório](https://github.com/ramidzkh/fabrishot) | [Download](https://modrinth.com/mod/fabrishot) |
+| No Telemetry         | [Repositório](https://github.com/kb-1000/no-telemetry) | [Download](https://modrinth.com/mod/no-telemetry) |
+
+Os seguintes mods mudaram de desenvolvedor e devem ser baixados direto do novo repositório.
+
+| Mod                  | Repositório |
+|----------------------|-------------|
+| Itemscroller         | [Repositório](https://github.com/sakura-ryoko/itemscroller) |
+| Litematica           | [Repositório](https://github.com/sakura-ryoko/litematica) |
+| Malilib              | [Repositório](https://github.com/sakura-ryoko/malilib) |
+| Minihud              | [Repositório](https://github.com/sakura-ryoko/minihud) |
+| Tweakeroo            | [Repositório](https://github.com/sakura-ryoko/tweakeroo) |
+
+[Clique aqui para voltar ao início](../README.md)

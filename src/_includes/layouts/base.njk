@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title | default("Minecraft Mods") }}</title>
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <h1 class="site-title"><a href="/">Minecraft Mods</a></h1>
+
+    <nav class="main-nav">
+    <a href="/mods/" class="{% if page.url == '/mods/' %}active{% endif %}">Todos os Mods</a>
+    <div class="dropdown">
+        <button class="dropbtn {% if page.url and page.url.indexOf('/versoes/') == 0 %} active{% endif %}">Versão</button>
+        <div class="dropdown-content">
+        {% for versao in collections.versoes %}
+            <a href="/versoes/{{ versao }}/" class="{% if page.url == '/versoes/' ~ versao ~ '/' %}active{% endif %}">{{ versao }}</a>
+        {% endfor %}
+        </div>
+    </div>
+    <a href="/tutorial/" class="{% if page.url == '/tutorial/' %}active{% endif %}">Tutorial</a>
+    <a href="/resourcepacks/" class="{% if page.url == '/resourcepacks/' %}active{% endif %}">Resource Packs</a>
+    <a href="/datapacks/" class="{% if page.url == '/datapacks/' %}active{% endif %}">Data Packs</a>
+    <a href="/shaders/" class="{% if page.url == '/shaders/' %}active{% endif %}">Shaders</a>
+    </nav>
+
+
+    <div class="theme-toggle">
+      <!-- futuro botão de alternar tema -->
+      <button class="theme-button" aria-label="Alternar tema">🌙</button>
+    </div>
+  </div>
+</header>
+
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer>
+    <p>© 2025 Minecraft Mods - Criado por Eduardo Dezena</p>
+  </footer>
+</body>
+</html>

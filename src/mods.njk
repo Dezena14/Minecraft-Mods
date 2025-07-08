@@ -1,0 +1,12 @@
+---
+layout: layouts/base.njk
+title: "Todos os Mods"
+---
+
+<h2>Todos os Mods</h2>
+
+<div class="mods">
+  {% for mod in collections.mods %}
+    {% include "mod.njk" %}
+  {% endfor %}
+</div>

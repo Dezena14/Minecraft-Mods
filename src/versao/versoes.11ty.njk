@@ -1,0 +1,19 @@
+---
+pagination:
+  data: collections.versoes
+  size: 1
+  alias: versao
+permalink: "/versoes/{{ versao }}/index.html"
+layout: layouts/base.njk
+title: "Mods para versão {{ versao }}"
+---
+
+<h2>Mods para a versão {{ versao }}</h2>
+<div class="mods">
+  {% for mod in collections.mods %}
+    {% if versao in mod.versoes %}
+      {% set mostrarRepositorio = false %}
+      {% include "mod.njk" %}
+    {% endif %}
+  {% endfor %}
+</div>

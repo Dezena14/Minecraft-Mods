@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Como Instalar Mods</title>
+  <link rel="stylesheet" href="/Minecraft-Mods/css/main.css" />
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <h1 class="site-title"><a href="/Minecraft-Mods/">Minecraft Mods</a></h1>
+
+    <nav class="main-nav">
+    <a href="/Minecraft-Mods/mods/" class="">Todos os Mods</a>
+    <div class="dropdown">
+        <button class="dropbtn ">Versão</button>
+        <div class="dropdown-content">
+        
+            <a href="/Minecraft-Mods/versoes/{{ versao }}/" class="">1.19.3</a>
+        
+            <a href="/Minecraft-Mods/versoes/{{ versao }}/" class="">1.20.1</a>
+        
+            <a href="/Minecraft-Mods/versoes/{{ versao }}/" class="">1.20.4</a>
+        
+            <a href="/Minecraft-Mods/versoes/{{ versao }}/" class="">1.21.0</a>
+        
+            <a href="/Minecraft-Mods/versoes/{{ versao }}/" class="">1.21.4</a>
+        
+            <a href="/Minecraft-Mods/versoes/{{ versao }}/" class="">1.21.5</a>
+        
+        </div>
+    </div>
+    <a href="/Minecraft-Mods/tutorial/" class="active">Tutorial</a>
+    <a href="/Minecraft-Mods/resourcepacks/" class="">Resource Packs</a>
+    <a href="/Minecraft-Mods/datapacks/" class="">Data Packs</a>
+    <a href="/Minecraft-Mods/shaders/" class="">Shaders</a>
+    </nav>
+
+
+    <div class="theme-toggle">
+      <!-- futuro botão de alternar tema -->
+      <button class="theme-button" aria-label="Alternar tema">🌙</button>
+    </div>
+  </div>
+</header>
+
+
+  <main>
+    <h1>Como instalar mods no Minecraft</h1>
+<p>Instalar mods no Minecraft com o loader <strong>Fabric</strong> é um processo simples. Abaixo estão os passos recomendados:</p>
+<h2>Passo a Passo</h2>
+<ol>
+<li><strong>Baixe o <a href="https://fabricmc.net/use/installer/">Fabric Loader</a></strong> compatível com a versão do jogo que você quer jogar.</li>
+<li><strong>Baixe o <a href="https://modrinth.com/mod/fabric-api">Fabric API</a></strong> correspondente à mesma versão do loader e do Minecraft.</li>
+<li>Execute o instalador do Fabric e selecione a versão desejada do jogo.</li>
+<li>Inicie o Minecraft usando o perfil recém-criado pelo Fabric. Feche o jogo após o carregamento inicial.</li>
+<li>Vá até sua pasta <code>.minecraft</code> e localize a subpasta <code>mods</code>. Se ela não existir, crie uma.</li>
+<li>Mova os arquivos <code>.jar</code> dos mods desejados para a pasta <code>mods</code>.</li>
+<li>Inicie novamente o jogo usando o perfil do Fabric Loader. Pronto!</li>
+</ol>
+<h2>Notas de Instalação</h2>
+<ul>
+<li>Certifique-se de que está usando a versão correta do mod (para <strong>Fabric</strong> e para a <strong>versão do jogo</strong>).</li>
+<li>Alguns mods exigem bibliotecas adicionais para funcionar. Verifique a descrição do mod.</li>
+<li>A ordem de carregamento e compatibilidade entre mods pode afetar o funcionamento do jogo.</li>
+</ul>
+<hr>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Minecraft Mods - Criado por Eduardo Dezena</p>
+  </footer>
+</body>
+</html>

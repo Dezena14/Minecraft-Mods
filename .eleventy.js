@@ -86,7 +86,7 @@ module.exports = function (eleventyConfig) {
   });
 
   return {
-    pathPrefix: "/Minecraft-Mods/",
+    
     dir: {
       input: "src",
       includes: "_includes",

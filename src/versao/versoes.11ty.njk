@@ -5,7 +5,8 @@ pagination:
   alias: versao
 permalink: "/versoes/{{ versao }}/index.html"
 layout: layouts/base.njk
-title: "Mods para versão {{ versao }}"
+eleventyComputed:
+  title: "Mods para versão {{ versao }}"
 ---
 
 <h2>Mods para a versão {{ versao }}</h2>

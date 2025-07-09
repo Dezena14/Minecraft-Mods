@@ -17,7 +17,8 @@
         <button class="dropbtn {% if page.url and page.url.indexOf('/versoes/') == 0 %} active{% endif %}">Versão</button>
         <div class="dropdown-content">
         {% for versao in collections.versoes %}
-            <a href="{{'/versoes/{{ versao }}/' | url}}" class="{% if page.url == '/versoes/' ~ versao ~ '/' %}active{% endif %}">{{ versao }}</a>
+            <a href="{{ ('/versoes/' ~ versao) | url }}" class="{% if page.url == '/versoes/' ~ versao %}active{% endif %}">{{ versao }}</a>
+
         {% endfor %}
         </div>
     </div>

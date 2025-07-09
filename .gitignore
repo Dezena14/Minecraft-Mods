@@ -6,6 +6,7 @@ npm-debug.log
 # Diretórios e arquivos gerados pelo Eleventy
 _output/
 dist/
+_site
 
 # Logs
 *.log

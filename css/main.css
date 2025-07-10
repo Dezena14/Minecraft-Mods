@@ -1,11 +1,47 @@
+:root   {
+  --cor-texto: #10170d;
+  --cor-fundo: #f2f8f1;
+  --cor-primaria: #345a26;
+  --cor-secundaria: #9bd586;
+  --cor-acento: #4ea22f;
+  --cor-header: #c2c2c2;
+}
+
+[data-tema="escuro"] {
+  --cor-texto: #f7f8f8;
+  --cor-fundo: #121212;
+  --cor-primaria: #b3d9a5;
+  --cor-secundaria: #3f792a;
+  --cor-acento: #7cd05d;
+  --cor-header: #222;
+}
+
+:root {
+  --cor-texto: #2a2a2a;  /* texto escuro no modo claro */
+  --cor-fundo: #f5f5f5;  /* fundo claro mais suave */
+  --cor-primaria: #2a4a23; /* verde escuro (para botões e elementos principais) */
+  --cor-secundaria: #a9cba7; /* verde claro com um toque amarelado */
+  --cor-acento: #4dbd74; /* verde vibrante para interações */
+  --cor-header: #f0f0f0;  /* header suave, um tom claro */
+}
+
+[data-tema="escuro"] {
+  --cor-texto: #e0e0e0;  /* texto claro no modo escuro */
+  --cor-fundo: #121212;  /* fundo escuro */
+  --cor-primaria: #4c6e41;  /* verde escuro saturado */
+  --cor-secundaria: #6c7d4a;  /* verde musgo */
+  --cor-acento: #32b74d;  /* verde vibrante para destaque */
+  --cor-header: #222;  /* header bem escuro */
+}
+
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  background-color: #121212;
-  color: #e0e0e0;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
   font-family: Arial, sans-serif;
 }
 
@@ -19,7 +55,7 @@ a:hover {
 }
 
 header {
-  background-color: #222;
+  background-color: var(--cor-header);
   padding: 1rem 2rem;
   flex-shrink: 0;
 }
@@ -29,7 +65,7 @@ header {
   margin: auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -41,7 +77,8 @@ header {
 }
 
 .site-title a {
-  color: #66ccff;
+  color: var(--cor-primaria);
+  color: #32b74d;
   text-decoration: none;
 }
 
@@ -52,7 +89,7 @@ header {
 .main-nav a,
 .dropbtn {
   position: relative;
-  color: #e0e0e0;
+  color: var(--cor-texto);
   background: none;
   border: none;
   font-size: 1rem;
@@ -71,7 +108,7 @@ header {
   transform: translateX(-50%);
   height: 2px;
   width: 0;
-  background-color: #66ccff;
+  background-color: #32b74d;
   transition: width 0.3s ease;
 }
 
@@ -89,16 +126,15 @@ header {
 
 .main-nav a.active,
 .dropbtn.active {
-  color: #66ccff;
+  color: #32b74d;
   font-weight: bold;
 }
 
-
 .dropdown {
   position: relative;
-  padding: 0 0.2rem;
+  /* padding: 0 0.2rem; */
+  
 }
-
 
 .dropdown-content {
   display: none;
@@ -190,7 +226,7 @@ main {
 .card h3 {
   font-size: 1.1rem;
   margin: 0;
-  color: #66ccff;
+  color: var(--cor-texto);
 }
 
 .tags {
@@ -229,7 +265,8 @@ main {
 
 .card-button {
   background-color: #333;
-  color: #66ccff;
+  /* color: var(--cor-texto); */
+  color: #32b74d;
   padding: 0.7rem 0;
   font-weight: bold;
   font-size: 0.85rem;
@@ -240,6 +277,7 @@ main {
 
 .card-button:hover {
   background-color: #444;
+  text-decoration: none;
 }
 
 .card-button.full {
@@ -302,8 +340,8 @@ main {
 .badge {
   display: inline-block;
   background-color: #333;
-  color: #66ccff;
-  border: 1px solid #66ccff44;
+  color: #32b74d;
+  border: 1px solid #2db949;
   border-radius: 6px;
   padding: 0.2em 0.5em;
   margin-right: 0.3em;

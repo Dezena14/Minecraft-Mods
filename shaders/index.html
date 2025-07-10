@@ -1,59 +1,49 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-tema="claro">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Shader Packs</title>
-  <link rel="stylesheet" href="/Minecraft-Mods/css/main.css" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/Minecraft-Mods/css/main.css">
 </head>
 <body>
 <header>
   <div class="header-container">
-    <h1 class="site-title"><a href="/Minecraft-Mods/">Minecraft Mods</a></h1>
-
+    <a href="/Minecraft-Mods/"><picture><source type="image/webp" srcset="/img/EfLu26rCeg-64.webp 64w"><img src="/img/EfLu26rCeg-64.jpeg" alt="Logo do site" width="64" height="64"></picture></a>
     <nav class="main-nav">
-    <a href="/Minecraft-Mods/mods/" class="">Todos os Mods</a>
-    <div class="dropdown">
-        <button class="dropbtn ">Versão</button>
+      <a href="/Minecraft-Mods/mods/" class="">Todos os Mods</a>
+      <div class="dropdown wrapper">
+        <button class="dropbtn ">Versão ▾</button>
         <div class="dropdown-content">
-        
-            <a href="/Minecraft-Mods/versoes/1.19.3" class="">1.19.3</a>
-
-        
-            <a href="/Minecraft-Mods/versoes/1.20.1" class="">1.20.1</a>
-
-        
-            <a href="/Minecraft-Mods/versoes/1.20.4" class="">1.20.4</a>
-
-        
-            <a href="/Minecraft-Mods/versoes/1.21.0" class="">1.21.0</a>
-
-        
-            <a href="/Minecraft-Mods/versoes/1.21.4" class="">1.21.4</a>
-
-        
-            <a href="/Minecraft-Mods/versoes/1.21.5" class="">1.21.5</a>
-
-        
+          
+              <a href="/Minecraft-Mods/versoes/1.19.3" class="">1.19.3</a>
+          
+              <a href="/Minecraft-Mods/versoes/1.20.1" class="">1.20.1</a>
+          
+              <a href="/Minecraft-Mods/versoes/1.20.4" class="">1.20.4</a>
+          
+              <a href="/Minecraft-Mods/versoes/1.21.0" class="">1.21.0</a>
+          
+              <a href="/Minecraft-Mods/versoes/1.21.4" class="">1.21.4</a>
+          
+              <a href="/Minecraft-Mods/versoes/1.21.5" class="">1.21.5</a>
+          
         </div>
-    </div>
-    <a href="/Minecraft-Mods/tutorial/" class="">Tutorial</a>
-    <a href="/Minecraft-Mods/resourcepacks/" class="">Resource Packs</a>
-    <a href="/Minecraft-Mods/datapacks/" class="">Data Packs</a>
-    <a href="/Minecraft-Mods/shaders/" class="active">Shaders</a>
+      </div>
+      <a href="/Minecraft-Mods/tutorial/" class="">Tutorial</a>
+      <a href="/Minecraft-Mods/resourcepacks/" class="">Resource Packs</a>
+      <a href="/Minecraft-Mods/datapacks/" class="">Data Packs</a>
+      <a href="/Minecraft-Mods/shaders/" class="active">Shaders</a>
     </nav>
-
-
     <div class="theme-toggle">
-      <!-- futuro botão de alternar tema -->
       <button class="theme-button" aria-label="Alternar tema">🌙</button>
     </div>
   </div>
 </header>
 
-
-  <main>
-    <h1>Shader Packs ✨</h1>
+<main>
+  <h1>Shader Packs ✨</h1>
 <p>Deixe o Minecraft com gráficos incríveis usando shaders — efeitos de luz, sombra, reflexos e muito mais.</p>
 <h2>Como instalar shaders</h2>
 <ol>
@@ -78,10 +68,36 @@
 <p>Foco na estética das cores, com névoa suave e iluminação ambiente.</p>
 <hr>
 
-  </main>
+</main>
 
-  <footer>
-    <p>© 2025 Minecraft Mods - Criado por Eduardo Dezena</p>
-  </footer>
+<footer>
+  <a href="https://www.flaticon.com/free-icons/gaming" title="gaming icons">Gaming icons created by Smashicons - Flaticon</a>
+  <p>© 2025 Minecraft Mods - Criado por Eduardo Dezena</p>
+</footer>
+
+<script>
+  const botao = document.querySelector(".theme-button");
+  const html = document.documentElement;
+
+  const temaSalvo = localStorage.getItem("tema");
+  if (temaSalvo === "escuro") {
+    html.setAttribute("data-tema", "escuro");
+    botao.textContent = "☀️";
+  }
+
+  botao.addEventListener("click", () => {
+    const temaAtual = html.getAttribute("data-tema") === "escuro";
+    if (temaAtual) {
+      html.setAttribute("data-tema", "claro");
+      localStorage.setItem("tema", "claro");
+      botao.textContent = "🌙";
+    } else {
+      html.setAttribute("data-tema", "escuro");
+      localStorage.setItem("tema", "escuro");
+      botao.textContent = "☀️";
+    }
+  });
+</script>
+
 </body>
 </html>

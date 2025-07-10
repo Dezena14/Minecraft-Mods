@@ -1,5 +1,6 @@
 const fs = require("fs");
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
@@ -85,8 +86,16 @@ module.exports = function (eleventyConfig) {
     return nomesBonitos[categoria] || categoria;
   });
 
+  // Copy `img/favicon/` to `_site/`
+  /* eleventyConfig.addPassthroughCopy({ "src/img/favicon.ico": "favicon.ico" }); */
+  /* eleventyConfig.addPassthroughCopy({ "src/img/ghost.png": "ghost.png" }); */
+
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin);
+
+  // Copy `js/` to `_site/`
+  /* eleventyConfig.addPassthroughCopy("src/js"); */
+
   return {
-    
     dir: {
       input: "src",
       includes: "_includes",

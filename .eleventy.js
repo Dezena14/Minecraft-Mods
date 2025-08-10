@@ -86,8 +86,7 @@ module.exports = function (eleventyConfig) {
     return nomesBonitos[categoria] || categoria;
   });
 
-  eleventyConfig.addPassthroughCopy({ "src/img/favicon.ico": "img/favicon.ico" });
-
+  eleventyConfig.addPassthroughCopy({ "src/favicon.ico": "favicon.ico" });
 
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["webp", "avif", "png", "jpeg"],

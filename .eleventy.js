@@ -1,6 +1,7 @@
 const fs = require("fs");
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
-const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
+const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
+const Image = require("@11ty/eleventy-img");
+// const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
@@ -32,7 +33,6 @@ module.exports = function (eleventyConfig) {
         });
       } catch (e) {
         console.warn(`⚠️ Não foi possível buscar dados de "${slug}": ${e.message}`);
-        // Fallback: insere apenas os dados do JSON
         modsEnriquecidos.push({
           id: null,
           slug: slug,
@@ -88,14 +88,38 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ "src/favicon.ico": "favicon.ico" });
 
-  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-    formats: ["webp", "avif", "png", "jpeg"],
-    widths: [null],
-    defaultAttributes: {
+  // 🔹 Shortcode para imagens locais processadas pelo eleventy-img
+  eleventyConfig.addNunjucksAsyncShortcode("image", async (src, alt = "", widths = [64]) => {
+    if (!src) return "";
+
+    const localPath = src.replace(/^\//, ""); // remove "/" inicial
+    const srcFull = `./src/${localPath}`;
+
+    let metadata = await Image(srcFull, {
+      widths: widths,
+      formats: ["webp", "jpeg"],
+      outputDir: "./_site/img/",
+      urlPath: "/img/"
+    });
+
+    const imageAttributes = {
+      alt,
       loading: "lazy",
       decoding: "async",
-    },
+    };
+
+    return Image.generateHTML(metadata, imageAttributes);
   });
+
+  // ❌ Desabilitado para evitar conflito com pathPrefix
+  // eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+  //   formats: ["webp", "avif", "png", "jpeg"],
+  //   widths: [null],
+  //   defaultAttributes: {
+  //     loading: "lazy",
+  //     decoding: "async",
+  //   },
+  // });
 
   return {
     dir: {

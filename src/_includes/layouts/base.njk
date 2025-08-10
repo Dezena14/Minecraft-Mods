@@ -10,7 +10,7 @@
 <body>
 <header>
   <div class="header-container">
-    <a href="{{'/' | url}}"><img src="{{ '/img/ghost.png' | url }}" alt="Logo do site" width="64" /></a>
+    <a href="{{ '/' | url }}">{{ image("img/ghost.png", "Logo do site", [64]) | safe }}</a>
     <nav class="main-nav">
       <a href="{{'/mods/' | url}}" class="{% if page.url == '/mods/' %}active{% endif %}">Todos os Mods</a>
       <div class="dropdown wrapper">

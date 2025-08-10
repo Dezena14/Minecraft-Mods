@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{{ title | default("Minecraft Mods") }}</title>
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="{{ '/img/favicon.ico' | url }}" />
   <link rel="stylesheet" href="{{'/css/main.css' | url}}" />
 </head>
 <body>
 <header>
   <div class="header-container">
-    <a href="{{'/' | url}}"><img src="/img/ghost.png" alt="Logo do site" width="64" /></a>
+    <a href="{{'/' | url}}"><img src="{{ '/img/ghost.png' | url }}" alt="Logo do site" width="64" /></a>
     <nav class="main-nav">
       <a href="{{'/mods/' | url}}" class="{% if page.url == '/mods/' %}active{% endif %}">Todos os Mods</a>
       <div class="dropdown wrapper">

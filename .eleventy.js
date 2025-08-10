@@ -86,14 +86,17 @@ module.exports = function (eleventyConfig) {
     return nomesBonitos[categoria] || categoria;
   });
 
-  // Copy `img/favicon/` to `_site/`
-  /* eleventyConfig.addPassthroughCopy({ "src/img/favicon.ico": "favicon.ico" }); */
-  /* eleventyConfig.addPassthroughCopy({ "src/img/ghost.png": "ghost.png" }); */
+  eleventyConfig.addPassthroughCopy({ "src/img/favicon.ico": "img/favicon.ico" });
 
-  eleventyConfig.addPlugin(eleventyImageTransformPlugin);
 
-  // Copy `js/` to `_site/`
-  /* eleventyConfig.addPassthroughCopy("src/js"); */
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    formats: ["webp", "avif", "png", "jpeg"],
+    widths: [null],
+    defaultAttributes: {
+      loading: "lazy",
+      decoding: "async",
+    },
+  });
 
   return {
     dir: {

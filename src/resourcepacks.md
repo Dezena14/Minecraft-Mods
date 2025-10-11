@@ -37,7 +37,7 @@ Um pacote que se tornou essencial para muitos jogadores. Ele não muda as textur
 
 * **Requerimentos:** Para funcionar, precisa do mod **[OptiFine](https://optifine.net/downloads)** ou da combinação dos mods **Entity Model Features (EMF)** e **Entity Texture Features (ETF)**.
 
-### [Fresh Moves](https://modrinth.com/resourcepack/fresh-moves)
+### [Fresh Moves](https://modrinth.com/resourcepack/tras-fresh-player)
 
 Uma extensão do famoso Fresh Animations, este pacote foca exclusivamente em dar novas animações ao **jogador**. Seus movimentos ao andar, correr, nadar e ficar parado se tornam muito mais fluidos e cheios de vida. É compatível com outros mods de animação, como o Parcool e emotes do Quark.
 

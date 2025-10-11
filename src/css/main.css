@@ -232,6 +232,8 @@ header {
 }
 .dropbtn {
     white-space: nowrap;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif;
 }
 .dropdown-content {
     display: none;

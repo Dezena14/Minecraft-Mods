@@ -71,19 +71,27 @@ module.exports = function (eleventyConfig) {
   
   // --- Shortcode de Imagem ---
   eleventyConfig.addNunjucksAsyncShortcode("image", async function(src, alt, widths = [64]) {
-    if (!src) return "";
-    let srcFull = `./src/${src.replace(/^\//, "")}`;
-    try {
-      let metadata = await Image(srcFull, {
-        widths, formats: ["webp", "jpeg"], outputDir: "./_site/img/", urlPath: "/img/", urlPath: `${pathPrefix}/img/`
-      });
-      let imageAttributes = { alt, loading: "lazy", decoding: "async" };
-      return Image.generateHTML(metadata, imageAttributes);
-    } catch (e) {
-      console.error(`Erro ao processar imagem ${srcFull}:`, e);
-      return "";
-    }
-  });
+  if (!src) return "";
+  let srcFull = `./src/${src.replace(/^\//, "")}`;
+  
+  // CORREÇÃO: A variável pathPrefix precisava ser definida aqui.
+  const pathPrefix = process.env.ELEVENTY_RUN_MODE === "build" ? "/Minecraft-Mods" : "";
+
+  try {
+    let metadata = await Image(srcFull, {
+      widths, 
+      formats: ["webp", "jpeg"], 
+      outputDir: "./_site/img/",
+      // CORREÇÃO: Usando a urlPath correta com a variável.
+      urlPath: `${pathPrefix}/img/`
+    });
+    let imageAttributes = { alt, loading: "lazy", decoding: "async" };
+    return Image.generateHTML(metadata, imageAttributes);
+  } catch (e) {
+    console.error(`Erro ao processar imagem ${srcFull}:`, e);
+    return "";
+  }
+});
 
   // --- Shortcode para Otimizar Imagens Remotas ---
   eleventyConfig.addNunjucksAsyncShortcode("remoteImage", async function(src, alt, classes) {

@@ -1,5 +1,4 @@
 const fs = require("fs");
-const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 const Image = require("@11ty/eleventy-img");
 
 // --- Cache para os dados dos mods ---
@@ -66,9 +65,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
 
-  // 👇 CORREÇÃO AQUI: O caminho agora aponta para dentro da pasta 'img' 👇
-  eleventyConfig.addPassthroughCopy({ "src/img/favicon.ico": "/favicon.ico" });
-
+  // 👇 CORREÇÃO FINAL E DEFINITIVA DO FAVICON 👇
+  // Copia o arquivo que está em 'src/img/favicon.ico' para a raiz do site final.
+  eleventyConfig.addPassthroughCopy({ "src/img/favicon.ico": "favicon.ico" });
+  
   // --- Shortcode de Imagem ---
   eleventyConfig.addNunjucksAsyncShortcode("image", async function(src, alt, widths = [64]) {
     if (!src) return "";
@@ -85,39 +85,29 @@ module.exports = function (eleventyConfig) {
     }
   });
 
+  // --- Shortcode para Otimizar Imagens Remotas ---
   eleventyConfig.addNunjucksAsyncShortcode("remoteImage", async function(src, alt, classes) {
-    if (!src) {
-      return "";
-    }
-
+    if (!src) return "";
+    const pathPrefix = process.env.ELEVENTY_RUN_MODE === "build" ? "/Minecraft-Mods" : "";
     try {
       let metadata = await Image(src, {
-        widths: [48, 96], // Gera tamanhos para telas normais e retina
-        formats: ["webp", "auto"], // Gera WebP e o formato original como fallback
-        outputDir: "./_site/img/mod-icons/", // Salva em uma subpasta organizada
-        urlPath: "/img/mod-icons/",
+        widths: [48, 96],
+        formats: ["webp", "auto"],
+        outputDir: "./_site/img/mod-icons/",
+        urlPath: `${pathPrefix}/img/mod-icons/`,
         cacheOptions: {
-          duration: "1w" // Guarda a imagem baixada por 1 semana antes de verificar de novo
+          duration: "1w"
         }
       });
-
-      let imageAttributes = {
-        alt,
-        class: classes,
-        loading: "lazy",
-        decoding: "async",
-      };
-
+      let imageAttributes = { alt, class: classes, loading: "lazy", decoding: "async" };
       return Image.generateHTML(metadata, imageAttributes);
     } catch (e) {
       console.warn(`⚠️ Erro ao processar imagem remota ${src}: ${e.message}`);
-      // Em caso de erro, retorna uma imagem de fallback ou nada
       return `<div class="${classes}" style="background-color: var(--cor-borda);"></div>`;
     }
   });
 
   // --- Collections ---
-  // (O resto do arquivo continua igual)
   eleventyConfig.addCollection("mods", async () => {
     return await getEnrichedModsData();
   });
@@ -185,6 +175,7 @@ module.exports = function (eleventyConfig) {
 
   // --- Filtros ---
   eleventyConfig.addFilter("categoriaBonita", function (categoria) {
+
     const nomesBonitos = { "utility": "Utilidade", "hud": "HUD", "optimization": "Otimização", "library": "Biblioteca", "social": "Social", "management": "Gestão", "cosmetic": "Cosmético", "game-mechanics": "Mecânicas de jogo", "decoration": "Decoração", "adventure": "Aventura", "economy": "Economia" };
     return nomesBonitos[categoria] || categoria.charAt(0).toUpperCase() + categoria.slice(1);
   });

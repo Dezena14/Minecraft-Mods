@@ -42,9 +42,14 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 a {
-    color: var(--cor-link);
+    color: var(--cor-texto);
     text-decoration: none;
 }
+
+a.active {
+    color: var(--cor-acento);
+}
+
 a:hover {
     text-decoration: underline;
 }
@@ -85,12 +90,13 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 .site-title {
     font-size: 1.5rem;
     margin: 0;
     flex-shrink: 0;
+    z-index: 10000;
 }
 .site-title a {
     color: var(--cor-primaria);
@@ -101,12 +107,68 @@ header {
     opacity: 0.9;
 }
 
-.main-nav {
+/* Controles da Direita (Tema e Hambúrguer) */
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Navegação do Desktop */
+.main-nav-desktop {
     display: flex;
     gap: 1rem;
     align-items: center;
-    margin-left: auto;
+    margin: 0 auto;
 }
+.main-nav-desktop a,
+.main-nav-desktop .dropbtn {
+    position: relative;
+    color: var(--cor-texto);
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0.3rem 0.5rem;
+    transition: color 0.2s ease;
+}
+
+.main-nav-desktop a:hover,
+.main-nav-desktop .dropbtn:hover {
+    color: var(--cor-acento);
+}
+
+.main-nav-desktop > a:hover::after,
+.main-nav-desktop > a.active::after,
+.main-nav-desktop .dropbtn.active::after {
+    width: 100%;
+}
+
+.main-nav-desktop a.active,
+.main-nav-desktop .dropbtn.active {
+    color: var(--cor-acento);
+    font-weight: bold;
+}
+
+.main-nav-desktop a::after,
+.main-nav-desktop .dropbtn::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--cor-acento);
+    transition: width 0.3s ease;
+}
+
+.main-nav-desktop a:hover::after,
+.main-nav-desktop .dropbtn:hover::after {
+    width: 100%;
+}
+
 .main-nav a,
 .dropbtn {
     position: relative;
@@ -124,31 +186,8 @@ header {
     color: var(--cor-acento);
 }
 
-/* Animação da linha para links principais do header */
-.main-nav > a::after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 2px;
-    width: 0;
-    background-color: var(--cor-acento);
-    transition: width 0.3s ease;
-}
-.main-nav > a:hover::after,
-.main-nav > a.active::after {
-    width: 100%;
-}
-.main-nav a.active,
-.dropbtn.active {
-    color: var(--cor-acento);
-    font-weight: bold;
-}
-
-/* --- Componentes --- */
-.theme-toggle,
-.theme-toggle-mobile {
+/* Botão de Tema */
+.theme-toggle {
     display: flex;
 }
 .theme-button {
@@ -184,6 +223,8 @@ header {
 [data-tema="escuro"] .theme-button .icon-moon {
     opacity: 0;
 }
+
+/* --- Componentes --- */
 
 /* Dropdowns */
 .dropdown {
@@ -231,21 +272,7 @@ header {
     align-items: center;
     justify-content: space-between;
 }
-.dropdown-submenu > a::after {
-    content: "▸";
-    margin-left: 1em;
-    opacity: 0.7;
-    transition: transform 0.2s ease;
-}
-.dropdown-submenu.is-open > a::after {
-    transform: rotate(90deg);
-}
-
-/* Estilo Unificado para Links de Dropdown */
-.dropbtn::after,
-.dropdown-content a::after {
-    display: none !important;
-}
+/* REMOVIDO: .dropdown-submenu > a::after (a setinha feia) */
 .dropdown-content a {
     display: block;
     padding: 0.6rem 1rem;
@@ -260,7 +287,6 @@ header {
     color: var(--cor-acento);
     text-decoration: none;
 }
-
 @media (hover: hover) and (min-width: 769px) {
     .dropdown:hover > .dropdown-content,
     .dropdown-submenu:hover > .dropdown-submenu-content {
@@ -423,30 +449,28 @@ header {
     font-weight: 600;
 }
 
-/* --- HEADER RESPONSIVO (MOBILE) --- */
-.mobile-nav-toggle {
-    display: none;
-}
+/* --- HEADER RESPONSIVO --- */
+.mobile-nav-toggle,
+.main-nav-mobile,
 .theme-toggle-mobile {
     display: none;
 }
 
 @media (max-width: 768px) {
-    .header-container > .main-nav,
-    .header-container > .theme-toggle {
+    .main-nav-desktop,
+    .header-controls .theme-toggle {
         display: none;
     }
     .mobile-nav-toggle {
         display: block;
-        background: transparent;
-        border: 0;
-        cursor: pointer;
-        color: var(--cor-texto);
         z-index: 9999;
     }
-
-    .main-nav {
+    .main-nav-mobile {
         display: flex;
+        overflow: scroll;
+    }
+
+    .main-nav-mobile {
         position: fixed;
         inset: 0 0 0 30%;
         background: var(--cor-fundo-card);
@@ -457,13 +481,18 @@ header {
         transform: translateX(100%);
         transition: transform 350ms ease-out;
         z-index: 9998;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
     }
-    .main-nav[data-visible="true"] {
+    .main-nav-mobile[data-visible="true"] {
         transform: translateX(0%);
     }
-
-    .main-nav .dropdown-content,
-    .main-nav .dropdown-submenu-content {
+    .main-nav-mobile a,
+    .main-nav-mobile .dropbtn {
+        font-size: 1.2rem;
+        padding: 0.5rem 0;
+    }
+    .main-nav-mobile .dropdown-content,
+    .main-nav-mobile .dropdown-submenu-content {
         position: static;
         display: none;
         border: none;
@@ -473,20 +502,21 @@ header {
         min-width: auto;
         margin-top: 0.5rem;
     }
-    .main-nav .dropdown.is-open > .dropdown-content,
-    .main-nav .dropdown-submenu.is-open > .dropdown-submenu-content {
+    .main-nav-mobile .dropdown.is-open > .dropdown-content,
+    .main-nav-mobile .dropdown-submenu.is-open > .dropdown-submenu-content {
         display: block;
     }
-
+    .main-nav-mobile .dropdown-submenu.is-open > a::after {
+        transform: rotate(90deg);
+    }
     .theme-toggle-mobile {
         display: flex;
-        justify-content: center;
         width: 100%;
         margin-top: auto;
         padding-top: 1.5rem;
         border-top: 1px solid var(--cor-borda);
+        justify-content: center;
     }
-
     .mobile-nav-toggle .icon-close {
         display: none;
     }

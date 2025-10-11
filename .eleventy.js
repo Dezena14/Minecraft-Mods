@@ -75,7 +75,7 @@ module.exports = function (eleventyConfig) {
     let srcFull = `./src/${src.replace(/^\//, "")}`;
     try {
       let metadata = await Image(srcFull, {
-        widths, formats: ["webp", "jpeg"], outputDir: "./_site/img/", urlPath: "/img/",
+        widths, formats: ["webp", "jpeg"], outputDir: "./_site/img/", urlPath: "/img/", urlPath: `${pathPrefix}/img/`
       });
       let imageAttributes = { alt, loading: "lazy", decoding: "async" };
       return Image.generateHTML(metadata, imageAttributes);

@@ -8,21 +8,17 @@
     --cor-fundo-card: #ffffff;
     --cor-header: #ffffff;
     --cor-primaria: #2a4a23;
-    --cor-acento: #3a9d58;
-    --cor-acento-brilhante: #3a9d58;
-    --cor-link: #3a9d58;
+    --cor-destaque: #3a9d58;
     --cor-borda: #dfe3e8;
     --cor-sombra: rgba(0, 0, 0, 0.08);
 }
 [data-tema="escuro"] {
-    --cor-texto: #e4e6eb;
-    --cor-fundo: #18191a;
+    --cor-texto: #e8e8e8;
+    --cor-fundo: #212121;
     --cor-fundo-card: #242526;
     --cor-header: #242526;
     --cor-primaria: #b3d9a5;
-    --cor-acento: #32b74d;
-    --cor-acento-brilhante: #32b74d;
-    --cor-link: var(--cor-acento-brilhante);
+    --cor-destaque: #32b74d;
     --cor-borda: #3a3b3c;
     --cor-sombra: rgba(0, 0, 0, 0.4);
 }
@@ -42,16 +38,18 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 a {
-    color: var(--cor-texto);
+    color: var(--cor-destaque);
     text-decoration: none;
+    transition: opacity 0.2s ease;
 }
 
 a.active {
-    color: var(--cor-acento);
+    color: var(--cor-destaque);
 }
 
 a:hover {
     text-decoration: underline;
+    opacity: 0.8;
 }
 
 /* --- Estrutura Principal (Layout) --- */
@@ -136,7 +134,7 @@ header {
 
 .main-nav-desktop a:hover,
 .main-nav-desktop .dropbtn:hover {
-    color: var(--cor-acento);
+    color: var(--cor-destaque);
 }
 
 .main-nav-desktop > a:hover::after,
@@ -147,7 +145,7 @@ header {
 
 .main-nav-desktop a.active,
 .main-nav-desktop .dropbtn.active {
-    color: var(--cor-acento);
+    color: var(--cor-destaque);
     font-weight: bold;
 }
 
@@ -160,7 +158,7 @@ header {
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background-color: var(--cor-acento);
+    background-color: var(--cor-destaque);
     transition: width 0.3s ease;
 }
 
@@ -183,7 +181,7 @@ header {
 }
 .main-nav a:hover,
 .dropbtn:hover {
-    color: var(--cor-acento);
+    color: var(--cor-destaque);
 }
 
 /* Botão de Tema */
@@ -279,12 +277,12 @@ header {
     border-radius: 6px;
     color: var(--cor-texto);
     white-space: nowrap;
-    transition: background-color 0.2s ease, color 0.2s ease;;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 .dropdown-content a:hover,
 .dropdown-content a.active {
     background-color: var(--cor-borda);
-    color: var(--cor-acento);
+    color: var(--cor-destaque);
     text-decoration: none;
 }
 @media (hover: hover) and (min-width: 769px) {
@@ -357,7 +355,7 @@ header {
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 8px var(--cor-sombra), 0 8px 16px var(--cor-sombra);
-    border-color: var(--cor-acento);
+    border-color: var(--cor-destaque);
 }
 .card.hidden {
     opacity: 0;
@@ -391,7 +389,6 @@ header {
 }
 .descricao {
     color: var(--cor-texto);
-    opacity: 0.8;
     margin: 0.5rem 0;
     line-height: 1.5;
 }
@@ -417,7 +414,7 @@ header {
     justify-content: center;
     gap: 0.5em;
     background-color: transparent;
-    color: var(--cor-acento-brilhante);
+    color: var(--cor-destaque);
     padding: 0.8rem 0;
     font-weight: bold;
     font-size: 0.8rem;
@@ -439,8 +436,8 @@ header {
 .badge {
     display: inline-block;
     background-color: var(--cor-fundo);
-    color: var(--cor-acento-brilhante);
-    border: 1px solid var(--cor-acento-brilhante);
+    color: var(--cor-destaque);
+    border: 1px solid var(--cor-destaque);
     border-radius: 6px;
     padding: 0.2em 0.5em;
     margin-right: 0.3em;
@@ -454,6 +451,12 @@ header {
 .main-nav-mobile,
 .theme-toggle-mobile {
     display: none;
+}
+
+@media (max-width: 1060px) {
+    .filter-ui-wrapper {
+        justify-content: stretch;
+    }
 }
 
 @media (max-width: 768px) {
@@ -494,7 +497,14 @@ header {
     .main-nav-mobile .dropbtn {
         font-size: 1.2rem;
         padding: 0.5rem 0;
+        color: var(--cor-texto);
     }
+
+    .main-nav-mobile a.active,
+    .main-nav-mobile .dropbtn.active {
+        color: var(--cor-destaque);
+    }
+
     .main-nav-mobile .dropdown-content,
     .main-nav-mobile .dropdown-submenu-content {
         position: static;

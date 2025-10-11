@@ -245,6 +245,7 @@ module.exports = function (eleventyConfig) {
             "decoration": "Decoração",
             "adventure": "Aventura",
             "economy": "Economia",
+            "storage" : "Armazenamento",
         };
         return (
             nomesBonitos[categoria] ||

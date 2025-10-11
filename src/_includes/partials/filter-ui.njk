@@ -1,14 +1,30 @@
 <div class="filter-ui-wrapper">
-  <div class="dropdown filter-dropdown">
-    <button class="dropbtn">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
-      <span>Filtrar</span>
-    </button>
-    <div class="dropdown-content">
-      <a href="#" class="filter-option active" data-category="all">Todas as Categorias</a>
-      {% for category in collections.modCategories %}
-        <a href="#" class="filter-option" data-category="{{ category }}">{{ category | categoriaBonita }}</a>
-      {% endfor %}
+    <div class="dropdown filter-dropdown">
+        <button class="dropbtn">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
+            </svg>
+            <span>Filtrar</span>
+        </button>
+        <div class="dropdown-content">
+            <a href="#" class="filter-option active" data-category="all"
+                >Todas as Categorias</a
+            >
+            {% for category in collections.modCategories %}
+            <a href="#" class="filter-option" data-category="{{ category }}">{{
+                category | categoriaBonita
+            }}</a>
+            {% endfor %}
+        </div>
     </div>
-  </div>
 </div>

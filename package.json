@@ -1,32 +1,32 @@
 {
-  "name": "minecraft-mods",
-  "version": "1.0.0",
-  "description": "Este repositório é composto por listas de mods de Minecraft divididas entre as versões do jogo. Também está disponível uma tabela com o nome, link para download e repositório de cada mod.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx @11ty/eleventy --serve",
-    "build": "npx @11ty/eleventy --pathprefix 'Minecraft-Mods'",
-    "update-versions": "node ./scripts/update-versions.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Dezena14/Minecraft-Mods.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/Dezena14/Minecraft-Mods/issues"
-  },
-  "homepage": "https://github.com/Dezena14/Minecraft-Mods#readme",
-  "devDependencies": {
-    "@11ty/eleventy": "^3.1.2"
-  },
-  "dependencies": {
-    "@11ty/eleventy-img": "^6.0.4",
-    "node-fetch": "^3.3.2",
-    "readline-sync": "^1.4.10"
-  }
+    "name": "minecraft-mods",
+    "version": "1.0.0",
+    "description": "Este repositório é composto por listas de mods de Minecraft divididas entre as versões do jogo. Também está disponível uma tabela com o nome, link para download e repositório de cada mod.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "npx @11ty/eleventy --serve",
+        "build": "npx @11ty/eleventy --pathprefix 'Minecraft-Mods'",
+        "update-versions": "node ./scripts/update-versions.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Dezena14/Minecraft-Mods.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "bugs": {
+        "url": "https://github.com/Dezena14/Minecraft-Mods/issues"
+    },
+    "homepage": "https://github.com/Dezena14/Minecraft-Mods#readme",
+    "devDependencies": {
+        "@11ty/eleventy": "^3.1.2"
+    },
+    "dependencies": {
+        "@11ty/eleventy-img": "^6.0.4",
+        "node-fetch": "^3.3.2",
+        "readline-sync": "^1.4.10"
+    }
 }

@@ -1,3 +1,5 @@
+// Arquivo: .eleventy.js
+
 const fs = require("fs");
 const Image = require("@11ty/eleventy-img");
 

@@ -36,3 +36,27 @@ Novamente, uma ótima opção para quem quer apenas refinar o visual padrão. Pe
 Um pacote que se tornou essencial para muitos jogadores. Ele não muda as texturas, mas refaz completamente as **animações** das criaturas. Aldeões gesticulam, zumbis se arrastam de forma mais ameaçadora e animais se movem de um jeito muito mais fluido e natural.
 
 * **Requerimentos:** Para funcionar, precisa do mod **[OptiFine](https://optifine.net/downloads)** ou da combinação dos mods **Entity Model Features (EMF)** e **Entity Texture Features (ETF)**.
+
+### [Fresh Moves](https://modrinth.com/resourcepack/fresh-moves)
+
+Uma extensão do famoso Fresh Animations, este pacote foca exclusivamente em dar novas animações ao **jogador**. Seus movimentos ao andar, correr, nadar e ficar parado se tornam muito mais fluidos e cheios de vida. É compatível com outros mods de animação, como o Parcool e emotes do Quark.
+
+* **Requerimentos:** Precisa dos mods **Entity Model Features (EMF)** e **Entity Texture Features (ETF)**. **Não funciona com OptiFine.**
+
+### [Mars's Enchanted Book Textures](https://modrinth.com/resourcepack/different-textures-for-enchanted-books)
+
+Cansado de ter baús cheios de livros encantados idênticos? Este pacote dá a cada livro uma textura única baseada no seu encantamento principal, tornando a organização e a identificação visual muito mais rápidas e intuitivas. A cor e o símbolo de cada livro te ajudam a saber o que ele faz sem precisar ler a descrição.
+
+* **Requerimentos:** Para versões do Minecraft abaixo da 1.20.4, precisa de um mod que suporte CIT, como **[CIT Resewn](https://modrinth.com/mod/cit-resewn)** ou OptiFine.
+
+### [Tasty Items](https://modrinth.com/resourcepack/tasty-items)
+
+Um pacote de texturas simples e genial que adiciona animações de "comer" para todas as comidas e poções do jogo, sem precisar de nenhum mod. Ao consumir um item, você o verá sendo levado à boca e diminuindo a cada mordida, adicionando um pequeno toque de imersão e realismo ao ato de se alimentar no jogo.
+
+* **Requerimentos:** Funciona em versões do Minecraft `1.21.4` ou mais recentes.
+
+### [Potion Effect Icons](https://modrinth.com/resourcepack/potion-effect-icons)
+
+Este pacote de texturas dá a cada poção, flecha e frasco de efeito um ícone único no inventário, baseado no seu efeito principal (Força, Velocidade, Visão Noturna, etc.). Facilita enormemente a organização de baús e a seleção rápida da poção correta no meio do combate, sem precisar ler o nome de cada uma.
+
+* **Requerimentos:** Funciona melhor em versões recentes do Minecraft (`1.21.5+`).

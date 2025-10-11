@@ -1,4 +1,4 @@
-// Arquivo: scripts\update-versions.js
+// Arquivo: scripts\curate.js
 
 const fs = require("fs");
 const path = require("path");

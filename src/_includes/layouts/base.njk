@@ -3,21 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ title | default("Minecraft Mods") }}</title>
-  <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | url }}" />
+  <title>Minecraft Mods | {{ title }}</title>
+  <script>
+    // Script "Anti-Flash" para definir o tema antes da renderização
+    (function() {
+      function getInitialTheme() {
+        const storedTheme = localStorage.getItem('tema');
+        if (storedTheme) return storedTheme;
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        return systemPrefersDark ? 'escuro' : 'claro';
+      }
+      document.documentElement.setAttribute('data-tema', getInitialTheme());
+    })();
+  </script>
+  <link rel="icon" href="{{ '/favicon.ico' | url }}">
   <link rel="stylesheet" href="{{'/css/main.css' | url}}" />
 </head>
 <body>
+
 <header>
   <div class="header-container">
-    <a href="{{ '/' | url }}">{{ image("img/ghost.png", "Logo do site", [64]) | safe }}</a>
-    <nav class="main-nav">
+    <a href="{{ '/' | url }}" class="site-title">{% image "img/ghost.png", "Logo do site", [64] %}</a>
+
+    <button class="mobile-nav-toggle" aria-controls="main-nav" aria-expanded="false">
+      <svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+    </button>
+
+    <nav class="main-nav" id="main-nav" data-visible="false">
       <a href="{{'/mods/' | url}}" class="{% if page.url == '/mods/' %}active{% endif %}">Todos os Mods</a>
       <div class="dropdown wrapper">
         <button class="dropbtn {% if page.url and page.url.indexOf('/versoes/') == 0 %} active{% endif %}">Versão ▾</button>
         <div class="dropdown-content">
-          {% for versao in collections.versoes %}
-              <a href="{{ ('/versoes/' ~ versao) | url }}" class="{% if page.url == '/versoes/' ~ versao %}active{% endif %}">{{ versao }}</a>
+          {% for group, versions in collections.versoesAgrupadas %}
+            <div class="dropdown-submenu">
+              <a href="#">{{ group }}</a>
+              <div class="dropdown-submenu-content">
+                {% for versao in versions %}
+                  <a href="{{ ('/versoes/' ~ versao) | url }}" class="{% if page.url == '/versoes/' ~ versao %}active{% endif %}">{{ versao }}</a>
+                {% endfor %}
+              </div>
+            </div>
           {% endfor %}
         </div>
       </div>
@@ -25,9 +51,20 @@
       <a href="{{'/resourcepacks/' | url}}" class="{% if page.url == '/resourcepacks/' %}active{% endif %}">Resource Packs</a>
       <a href="{{'/datapacks/' | url}}" class="{% if page.url == '/datapacks/' %}active{% endif %}">Data Packs</a>
       <a href="{{'/shaders/' | url}}" class="{% if page.url == '/shaders/' %}active{% endif %}">Shaders</a>
+      
+      <div class="theme-toggle-mobile">
+        <button class="theme-button" aria-label="Alternar tema">
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        </button>
+      </div>
     </nav>
+    
     <div class="theme-toggle">
-      <button class="theme-button" aria-label="Alternar tema">🌙</button>
+      <button class="theme-button" aria-label="Alternar tema">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+      </button>
     </div>
   </div>
 </header>
@@ -41,29 +78,7 @@
   <p>© 2025 Minecraft Mods - Criado por Eduardo Dezena</p>
 </footer>
 
-<script>
-  const botao = document.querySelector(".theme-button");
-  const html = document.documentElement;
-
-  const temaSalvo = localStorage.getItem("tema");
-  if (temaSalvo === "escuro") {
-    html.setAttribute("data-tema", "escuro");
-    botao.textContent = "☀️";
-  }
-
-  botao.addEventListener("click", () => {
-    const temaAtual = html.getAttribute("data-tema") === "escuro";
-    if (temaAtual) {
-      html.setAttribute("data-tema", "claro");
-      localStorage.setItem("tema", "claro");
-      botao.textContent = "🌙";
-    } else {
-      html.setAttribute("data-tema", "escuro");
-      localStorage.setItem("tema", "escuro");
-      botao.textContent = "☀️";
-    }
-  });
-</script>
+<script src="{{ '/js/main.js' | url }}" defer></script>
 
 </body>
 </html>

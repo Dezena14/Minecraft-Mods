@@ -1,37 +1,36 @@
 ---
 layout: layouts/base.njk
-title: Shader Packs
+title: Guia de Shaders
 ---
 
-# Shader Packs ✨
+# Guia de Shaders
 
-Deixe o Minecraft com gráficos incríveis usando shaders — efeitos de luz, sombra, reflexos e muito mais.
+Shaders são modificações gráficas que revolucionam completamente o visual do Minecraft. Eles adicionam iluminação realista, sombras que se movem com o sol, água com reflexos e ondulações, vento que balança as folhas das árvores e muito mais. É a forma mais impactante de transformar a aparência do seu jogo.
 
-## Como instalar shaders
-
-1. Baixe e instale o [Iris Shaders](https://modrinth.com/mod/iris), compatível com Fabric e Sodium  
-2. Coloque os arquivos `.zip` dos shaders na pasta `shaderpacks` do seu `.minecraft`  
-3. Inicie o jogo, vá até as opções gráficas e ative o shader desejado
-
-> 💡 **Dica:** O Iris é open-source, leve e compatível com a maioria dos shader packs feitos para OptiFine.
+Para usar shaders, você **precisa** de um mod que dê esse suporte. Atualmente, a melhor opção para Fabric é o **Iris**.
 
 ---
 
-## Shaders recomendados
+### Como Instalar Shaders (com Iris)
 
-### 🌤️ [Complementary Reimagined](https://modrinth.com/shader/complementary-reimagined)  
-Iluminação natural, sombras suaves e ótimo desempenho — um dos shaders mais usados hoje.
+1.  **Instale o Fabric e a Fabric API:** Siga os passos 1 e 2 do nosso [tutorial principal de instalação de mods](/tutorial).
 
-### 🌄 [Sildur’s Vibrant Shaders](https://sildurs-shaders.github.io/)  
-Tons vibrantes e fortes reflexos d'água, com várias versões para diferentes PCs.
+2.  **Baixe o Iris Shaders:** Pegue o arquivo `.jar` do **[Iris Shaders no Modrinth](https://modrinth.com/mod/iris)**. O Iris já vem com o Sodium "embutido", um excelente mod de otimização.
 
-### 🌙 [BSL Shaders](https://modrinth.com/shader/bsl-shaders)  
-Visual moderno e cinematográfico, ótimo equilíbrio entre beleza e performance.
+3.  **Instale o mod:** Coloque o arquivo `.jar` do Iris dentro da sua pasta `mods`, como qualquer outro mod.
 
-### 🌧️ [ProjectLUMA](https://www.projectluma.dev/)  
-Estilo realista com foco em cores suaves e iluminação real.
+4.  **Encontre a pasta `shaderpacks`:** Inicie o jogo com o Iris instalado. Vá em **Opções > Configurações de Vídeo > Shaders...** e clique no botão **"Abrir Pasta de Shaders"**.
 
-### 🌫️ [Oceano Shaders](https://github.com/kroberdev/oceano)  
-Foco na estética das cores, com névoa suave e iluminação ambiente.
+5.  **Mova seus shaders:** A pasta `shaderpacks` se abrirá. Mova os arquivos `.zip` dos shaders que você baixou para dentro desta pasta.
+
+6.  **Ative o Shader:** Volte para o menu do jogo. O novo shader aparecerá na lista. Clique sobre ele e depois em "Aplicar". O jogo vai recarregar e o novo visual estará ativo.
+
+> **Aviso:** Shaders podem ser bem pesados e exigir bastante do seu computador. Se o jogo ficar lento, experimente um shader mais "leve" ou diminua as configurações de qualidade dentro das opções do próprio shader.
 
 ---
+
+## Shaders Recomendados
+
+* **[Complementary Reimagined](https://modrinth.com/shader/complementary-reimagined):** Considerado por muitos o melhor ponto de partida. Oferece um visual deslumbrante que é, ao mesmo tempo, fiel ao estilo do Minecraft e surpreendentemente leve para rodar.
+* **[BSL Shaders](https://modrinth.com/shader/bsl-shaders):** Famoso por seu visual limpo e cinematográfico, com um céu e água muito bonitos. É extremamente customizável, permitindo ajustar cada detalhe.
+* **[Sildur's Vibrant Shaders](https://sildurs-shaders.github.io/):** Um clássico. Como o nome diz, ele realça as cores e cria um ambiente muito mais vivo e vibrante, com fortes efeitos de luz do sol.

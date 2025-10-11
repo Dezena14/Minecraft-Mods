@@ -1,1290 +1,2283 @@
 <!DOCTYPE html>
 <html lang="pt-BR" data-tema="claro">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Minecraft Mods | Mods 1.21.8</title>
-  <script>
-    // Script "Anti-Flash" para definir o tema antes da renderização
-    (function() {
-      function getInitialTheme() {
-        const storedTheme = localStorage.getItem('tema');
-        if (storedTheme) return storedTheme;
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        return systemPrefersDark ? 'escuro' : 'claro';
-      }
-      document.documentElement.setAttribute('data-tema', getInitialTheme());
-    })();
-  </script>
-  <link rel="icon" href="/Minecraft-Mods/favicon.ico">
-  <link rel="stylesheet" href="/Minecraft-Mods/css/main.css" />
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Minecraft Mods | Mods 1.21.8</title>
+        <script>
+            (function () {
+                function getInitialTheme() {
+                    const storedTheme = localStorage.getItem("tema");
+                    if (storedTheme) return storedTheme;
+                    const systemPrefersDark = window.matchMedia(
+                        "(prefers-color-scheme: dark)"
+                    ).matches;
+                    return systemPrefersDark ? "escuro" : "claro";
+                }
+                document.documentElement.setAttribute(
+                    "data-tema",
+                    getInitialTheme()
+                );
+            })();
+        </script>
+        <link rel="icon" href="/Minecraft-Mods/favicon.ico" />
+        <link rel="stylesheet" href="/Minecraft-Mods/css/main.css" />
+    </head>
+    <body>
+        <header>
+            <div class="header-container">
+                <a href="/Minecraft-Mods/" class="site-title"
+                    ><picture><source type="image/webp" srcset="/Minecraft-Mods/img/EfLu26rCeg-64.webp 64w"><img src="/Minecraft-Mods/img/EfLu26rCeg-64.jpeg" alt="Logo do site" loading="lazy" decoding="async" width="64" height="64"></picture></a
+                >
 
-<header>
-  <div class="header-container">
-    <a href="/Minecraft-Mods/" class="site-title"><picture><source type="image/webp" srcset="/Minecraft-Mods/img/EfLu26rCeg-64.webp 64w"><img src="/Minecraft-Mods/img/EfLu26rCeg-64.jpeg" alt="Logo do site" loading="lazy" decoding="async" width="64" height="64"></picture></a>
+                <nav class="main-nav-desktop" id="main-nav-desktop">
+                    <a
+                        href="/Minecraft-Mods/mods/"
+                        class=""
+                        >Todos os Mods</a
+                    >
+                    <div class="dropdown wrapper">
+                        <button
+                            class="dropbtn active"
+                        >
+                            Versão ▾
+                        </button>
+                        <div class="dropdown-content">
+                            
+                            <div class="dropdown-submenu">
+                                <a href="#">1.21</a>
+                                <div class="dropdown-submenu-content">
+                                    
+                                    <a
+                                        href="/Minecraft-Mods/versoes/1.21.10"
+                                        class=""
+                                        >1.21.10</a
+                                    >
+                                    
+                                    <a
+                                        href="/Minecraft-Mods/versoes/1.21.8"
+                                        class=""
+                                        >1.21.8</a
+                                    >
+                                    
+                                    <a
+                                        href="/Minecraft-Mods/versoes/1.21.7"
+                                        class=""
+                                        >1.21.7</a
+                                    >
+                                    
+                                    <a
+                                        href="/Minecraft-Mods/versoes/1.21.5"
+                                        class=""
+                                        >1.21.5</a
+                                    >
+                                    
+                                    <a
+                                        href="/Minecraft-Mods/versoes/1.21.4"
+                                        class=""
+                                        >1.21.4</a
+                                    >
+                                    
+                                    <a
+                                        href="/Minecraft-Mods/versoes/1.21.0"
+                                        class=""
+                                        >1.21.0</a
+                                    >
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="dropdown-submenu">
+                                <a href="#">1.20</a>
+                                <div class="dropdown-submenu-content">
+                                    
+                                    <a
+                                        href="/Minecraft-Mods/versoes/1.20.4"
+                                        class=""
+                                        >1.20.4</a
+                                    >
+                                    
+                                    <a
+                                        href="/Minecraft-Mods/versoes/1.20.1"
+                                        class=""
+                                        >1.20.1</a
+                                    >
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="dropdown-submenu">
+                                <a href="#">1.19</a>
+                                <div class="dropdown-submenu-content">
+                                    
+                                    <a
+                                        href="/Minecraft-Mods/versoes/1.19.3"
+                                        class=""
+                                        >1.19.3</a
+                                    >
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <a
+                        href="/Minecraft-Mods/tutorial/"
+                        class=""
+                        >Tutorial</a
+                    >
+                    <a
+                        href="/Minecraft-Mods/resourcepacks/"
+                        class=""
+                        >Resource Packs</a
+                    >
+                    <a
+                        href="/Minecraft-Mods/datapacks/"
+                        class=""
+                        >Data Packs</a
+                    >
+                    <a
+                        href="/Minecraft-Mods/shaders/"
+                        class=""
+                        >Shaders</a
+                    >
+                </nav>
 
-    <button class="mobile-nav-toggle" aria-controls="main-nav" aria-expanded="false">
-      <svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-      <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
-    </button>
-
-    <nav class="main-nav" id="main-nav" data-visible="false">
-      <a href="/Minecraft-Mods/mods/" class="">Todos os Mods</a>
-      <div class="dropdown wrapper">
-        <button class="dropbtn  active">Versão ▾</button>
-        <div class="dropdown-content">
-          
-            <div class="dropdown-submenu">
-              <a href="#">1.21</a>
-              <div class="dropdown-submenu-content">
-                
-                  <a href="/Minecraft-Mods/versoes/1.21.10" class="">1.21.10</a>
-                
-                  <a href="/Minecraft-Mods/versoes/1.21.8" class="">1.21.8</a>
-                
-                  <a href="/Minecraft-Mods/versoes/1.21.7" class="">1.21.7</a>
-                
-                  <a href="/Minecraft-Mods/versoes/1.21.5" class="">1.21.5</a>
-                
-                  <a href="/Minecraft-Mods/versoes/1.21.4" class="">1.21.4</a>
-                
-                  <a href="/Minecraft-Mods/versoes/1.21.0" class="">1.21.0</a>
-                
-              </div>
+                <div class="header-controls">
+                    <div class="theme-toggle">
+                        <button class="theme-button" aria-label="Alternar tema">
+                            <svg
+                                class="icon-moon"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                            </svg>
+                            <svg
+                                class="icon-sun"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <circle cx="12" cy="12" r="4" />
+                                <path d="M12 2v2" />
+                                <path d="M12 20v2" />
+                                <path d="m4.93 4.93 1.41 1.41" />
+                                <path d="m17.66 17.66 1.41 1.41" />
+                                <path d="M2 12h2" />
+                                <path d="M20 12h2" />
+                                <path d="m6.34 17.66-1.41 1.41" />
+                                <path d="m19.07 4.93-1.41 1.41" />
+                            </svg>
+                        </button>
+                    </div>
+                    <button
+                        class="mobile-nav-toggle"
+                        aria-controls="main-nav-mobile"
+                        aria-expanded="false"
+                    >
+                        <svg
+                            class="icon-menu"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <line x1="4" x2="20" y1="6" y2="6" />
+                            <line x1="4" x2="20" y1="12" y2="12" />
+                            <line x1="4" x2="20" y1="18" y2="18" />
+                        </svg>
+                        <svg
+                            class="icon-close"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <line x1="18" x2="6" y1="6" y2="18" />
+                            <line x1="6" x2="18" y1="6" y2="18" />
+                        </svg>
+                    </button>
+                </div>
             </div>
-          
-            <div class="dropdown-submenu">
-              <a href="#">1.20</a>
-              <div class="dropdown-submenu-content">
-                
-                  <a href="/Minecraft-Mods/versoes/1.20.4" class="">1.20.4</a>
-                
-                  <a href="/Minecraft-Mods/versoes/1.20.1" class="">1.20.1</a>
-                
-              </div>
-            </div>
-          
-            <div class="dropdown-submenu">
-              <a href="#">1.19</a>
-              <div class="dropdown-submenu-content">
-                
-                  <a href="/Minecraft-Mods/versoes/1.19.3" class="">1.19.3</a>
-                
-              </div>
-            </div>
-          
-        </div>
-      </div>
-      <a href="/Minecraft-Mods/tutorial/" class="">Tutorial</a>
-      <a href="/Minecraft-Mods/resourcepacks/" class="">Resource Packs</a>
-      <a href="/Minecraft-Mods/datapacks/" class="">Data Packs</a>
-      <a href="/Minecraft-Mods/shaders/" class="">Shaders</a>
-      
-      <div class="theme-toggle-mobile">
-        <button class="theme-button" aria-label="Alternar tema">
-            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-        </button>
-      </div>
-    </nav>
-    
-    <div class="theme-toggle">
-      <button class="theme-button" aria-label="Alternar tema">
-        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-      </button>
-    </div>
-  </div>
-</header>
 
-<main>
-  
+            <nav
+                class="main-nav-mobile"
+                id="main-nav-mobile"
+                data-visible="false"
+            >
+                <a
+                    href="/Minecraft-Mods/mods/"
+                    class=""
+                    >Todos os Mods</a
+                >
+                <div class="dropdown wrapper">
+                    <button
+                        class="dropbtn active"
+                    >
+                        Versão ▾
+                    </button>
+                    <div class="dropdown-content">
+                        
+                        <div class="dropdown-submenu">
+                            <a href="#">1.21</a>
+                            <div class="dropdown-submenu-content">
+                                
+                                <a
+                                    href="/Minecraft-Mods/versoes/1.21.10"
+                                    class=""
+                                    >1.21.10</a
+                                >
+                                
+                                <a
+                                    href="/Minecraft-Mods/versoes/1.21.8"
+                                    class=""
+                                    >1.21.8</a
+                                >
+                                
+                                <a
+                                    href="/Minecraft-Mods/versoes/1.21.7"
+                                    class=""
+                                    >1.21.7</a
+                                >
+                                
+                                <a
+                                    href="/Minecraft-Mods/versoes/1.21.5"
+                                    class=""
+                                    >1.21.5</a
+                                >
+                                
+                                <a
+                                    href="/Minecraft-Mods/versoes/1.21.4"
+                                    class=""
+                                    >1.21.4</a
+                                >
+                                
+                                <a
+                                    href="/Minecraft-Mods/versoes/1.21.0"
+                                    class=""
+                                    >1.21.0</a
+                                >
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="dropdown-submenu">
+                            <a href="#">1.20</a>
+                            <div class="dropdown-submenu-content">
+                                
+                                <a
+                                    href="/Minecraft-Mods/versoes/1.20.4"
+                                    class=""
+                                    >1.20.4</a
+                                >
+                                
+                                <a
+                                    href="/Minecraft-Mods/versoes/1.20.1"
+                                    class=""
+                                    >1.20.1</a
+                                >
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="dropdown-submenu">
+                            <a href="#">1.19</a>
+                            <div class="dropdown-submenu-content">
+                                
+                                <a
+                                    href="/Minecraft-Mods/versoes/1.19.3"
+                                    class=""
+                                    >1.19.3</a
+                                >
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <a
+                    href="/Minecraft-Mods/tutorial/"
+                    class=""
+                    >Tutorial</a
+                >
+                <a
+                    href="/Minecraft-Mods/resourcepacks/"
+                    class=""
+                    >Resource Packs</a
+                >
+                <a
+                    href="/Minecraft-Mods/datapacks/"
+                    class=""
+                    >Data Packs</a
+                >
+                <a
+                    href="/Minecraft-Mods/shaders/"
+                    class=""
+                    >Shaders</a
+                >
+                <div class="theme-toggle-mobile">
+                    <button class="theme-button" aria-label="Alternar tema">
+                        <svg
+                            class="icon-moon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                        </svg>
+                        <svg
+                            class="icon-sun"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M12 2v2" />
+                            <path d="M12 20v2" />
+                            <path d="m4.93 4.93 1.41 1.41" />
+                            <path d="m17.66 17.66 1.41 1.41" />
+                            <path d="M2 12h2" />
+                            <path d="M20 12h2" />
+                            <path d="m6.34 17.66-1.41 1.41" />
+                            <path d="m19.07 4.93-1.41 1.41" />
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+        </header>
+        <main>
+            
 <h2>Mods para a versão 1.21.8</h2>
 
 <div class="filter-ui-wrapper">
-  <div class="dropdown filter-dropdown">
-    <button class="dropbtn">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
-      <span>Filtrar</span>
-    </button>
-    <div class="dropdown-content">
-      <a href="#" class="filter-option active" data-category="all">Todas as Categorias</a>
-      
-        <a href="#" class="filter-option" data-category="adventure">Aventura</a>
-      
-        <a href="#" class="filter-option" data-category="decoration">Decoração</a>
-      
-        <a href="#" class="filter-option" data-category="economy">Economia</a>
-      
-        <a href="#" class="filter-option" data-category="game-mechanics">Mecânicas de jogo</a>
-      
-        <a href="#" class="filter-option" data-category="library">Biblioteca</a>
-      
-        <a href="#" class="filter-option" data-category="management">Gestão</a>
-      
-        <a href="#" class="filter-option" data-category="mobs">Mobs</a>
-      
-        <a href="#" class="filter-option" data-category="optimization">Otimização</a>
-      
-        <a href="#" class="filter-option" data-category="social">Social</a>
-      
-        <a href="#" class="filter-option" data-category="storage">Storage</a>
-      
-        <a href="#" class="filter-option" data-category="utility">Utilidade</a>
-      
+    <div class="dropdown filter-dropdown">
+        <button class="dropbtn">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
+            </svg>
+            <span>Filtrar</span>
+        </button>
+        <div class="dropdown-content">
+            <a href="#" class="filter-option active" data-category="all"
+                >Todas as Categorias</a
+            >
+            
+            <a href="#" class="filter-option" data-category="adventure">Aventura</a>
+            
+            <a href="#" class="filter-option" data-category="decoration">Decoração</a>
+            
+            <a href="#" class="filter-option" data-category="economy">Economia</a>
+            
+            <a href="#" class="filter-option" data-category="game-mechanics">Mecânicas de jogo</a>
+            
+            <a href="#" class="filter-option" data-category="library">Biblioteca</a>
+            
+            <a href="#" class="filter-option" data-category="management">Gestão</a>
+            
+            <a href="#" class="filter-option" data-category="mobs">Mobs</a>
+            
+            <a href="#" class="filter-option" data-category="optimization">Otimização</a>
+            
+            <a href="#" class="filter-option" data-category="social">Social</a>
+            
+            <a href="#" class="filter-option" data-category="storage">Storage</a>
+            
+            <a href="#" class="filter-option" data-category="utility">Utilidade</a>
+            
+        </div>
     </div>
-  </div>
 </div>
 
 <div class="mods">
-  
-    
       
-      <div class="card" data-categories="decoration optimization utility">
+    <div class="card" data-categories="decoration optimization utility">
         <div class="card-top">
-          
-            <img src="/Minecraft-Mods/img/mod-icons/Dp2MoVsqwn-48.webp" alt="Ícone de Better Clouds" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/Dp2MoVsqwn-48.webp 48w, /Minecraft-Mods/img/mod-icons/Dp2MoVsqwn-96.webp 96w" sizes="auto">
-          
-          <h3>Better Clouds</h3>
+             <img src="/Minecraft-Mods/img/mod-icons/Dp2MoVsqwn-48.webp" alt="Ícone de Better Clouds" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/Dp2MoVsqwn-48.webp 48w, /Minecraft-Mods/img/mod-icons/Dp2MoVsqwn-96.webp 96w" sizes="auto"> 
+            <h3>Better Clouds</h3>
         </div>
 
         
-          <p class="tags">
+        <p class="tags">
             
-              <span class="badge">Decoração</span>
+            <span class="badge">Decoração</span>
             
-              <span class="badge">Otimização</span>
+            <span class="badge">Otimização</span>
             
-              <span class="badge">Utilidade</span>
+            <span class="badge">Utilidade</span>
             
-          </p>
-        
-
-        
-          <p class="descricao">Beautiful clouds in touch with the vanilla style</p>
+        </p>
+         
+        <p class="descricao">Beautiful clouds in touch with the vanilla style</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/better-clouds/version/xdBmH3Z5" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/Qendolin/better-clouds" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/better-clouds/version/xdBmH3Z5"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/Qendolin/better-clouds"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
-      
-    
-  
-    
-      
-      <div class="card" data-categories="decoration game-mechanics utility">
+    </div>
+        
+    <div class="card" data-categories="decoration game-mechanics utility">
         <div class="card-top">
-          
-            <picture><source type="image/webp" srcset="/Minecraft-Mods/img/mod-icons/qqd4xPpQI0-48.webp 48w, /Minecraft-Mods/img/mod-icons/qqd4xPpQI0-64.webp 64w" sizes="auto"><img src="/Minecraft-Mods/img/mod-icons/qqd4xPpQI0-48.png" alt="Ícone de BetterF3" class="mod-icon" loading="lazy" decoding="async" width="64" height="64" srcset="/Minecraft-Mods/img/mod-icons/qqd4xPpQI0-48.png 48w, /Minecraft-Mods/img/mod-icons/qqd4xPpQI0-64.png 64w" sizes="auto"></picture>
-          
-          <h3>BetterF3</h3>
+             <picture><source type="image/webp" srcset="/Minecraft-Mods/img/mod-icons/qqd4xPpQI0-48.webp 48w, /Minecraft-Mods/img/mod-icons/qqd4xPpQI0-64.webp 64w" sizes="auto"><img src="/Minecraft-Mods/img/mod-icons/qqd4xPpQI0-48.png" alt="Ícone de BetterF3" class="mod-icon" loading="lazy" decoding="async" width="64" height="64" srcset="/Minecraft-Mods/img/mod-icons/qqd4xPpQI0-48.png 48w, /Minecraft-Mods/img/mod-icons/qqd4xPpQI0-64.png 64w" sizes="auto"></picture> 
+            <h3>BetterF3</h3>
         </div>
 
         
-          <p class="tags">
+        <p class="tags">
             
-              <span class="badge">Decoração</span>
+            <span class="badge">Decoração</span>
             
-              <span class="badge">Mecânicas de jogo</span>
+            <span class="badge">Mecânicas de jogo</span>
             
-              <span class="badge">Utilidade</span>
+            <span class="badge">Utilidade</span>
             
-          </p>
-        
-
-        
-          <p class="descricao">BetterF3 is a mod that replaces Minecraft&#39;s original debug HUD with a highly customizable, more human-readable HUD.</p>
+        </p>
+         
+        <p class="descricao">BetterF3 is a mod that replaces Minecraft&#39;s original debug HUD with a highly customizable, more human-readable HUD.</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/betterf3/version/DHCqyQtH" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/TreyRuffy/BetterF3" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/betterf3/version/DHCqyQtH"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/TreyRuffy/BetterF3"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
-      
-    
-  
-    
-  
-    
-      
-      <div class="card" data-categories="decoration social">
+    </div>
+          
+    <div class="card" data-categories="decoration social">
         <div class="card-top">
-          
-            <picture><source type="image/webp" srcset="/Minecraft-Mods/img/mod-icons/dgsjUMw0zI-48.webp 48w, /Minecraft-Mods/img/mod-icons/dgsjUMw0zI-96.webp 96w" sizes="auto"><img src="/Minecraft-Mods/img/mod-icons/dgsjUMw0zI-48.png" alt="Ícone de Chat Heads" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/dgsjUMw0zI-48.png 48w, /Minecraft-Mods/img/mod-icons/dgsjUMw0zI-96.png 96w" sizes="auto"></picture>
-          
-          <h3>Chat Heads</h3>
+             <picture><source type="image/webp" srcset="/Minecraft-Mods/img/mod-icons/dgsjUMw0zI-48.webp 48w, /Minecraft-Mods/img/mod-icons/dgsjUMw0zI-96.webp 96w" sizes="auto"><img src="/Minecraft-Mods/img/mod-icons/dgsjUMw0zI-48.png" alt="Ícone de Chat Heads" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/dgsjUMw0zI-48.png 48w, /Minecraft-Mods/img/mod-icons/dgsjUMw0zI-96.png 96w" sizes="auto"></picture> 
+            <h3>Chat Heads</h3>
         </div>
 
         
-          <p class="tags">
+        <p class="tags">
             
-              <span class="badge">Decoração</span>
+            <span class="badge">Decoração</span>
             
-              <span class="badge">Social</span>
+            <span class="badge">Social</span>
             
-          </p>
-        
-
-        
-          <p class="descricao">See who you&#39;re chatting with!</p>
+        </p>
+         
+        <p class="descricao">See who you&#39;re chatting with!</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/chat-heads/version/P6q2wonI" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/dzwdz/chat_heads" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/chat-heads/version/P6q2wonI"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/dzwdz/chat_heads"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
-      
-    
-  
-    
-      
-      <div class="card" data-categories="library">
+    </div>
+        
+    <div class="card" data-categories="library">
         <div class="card-top">
-          
-            <img src="/Minecraft-Mods/img/mod-icons/YEOm54gBOm-48.webp" alt="Ícone de Cloth Config API" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/YEOm54gBOm-48.webp 48w, /Minecraft-Mods/img/mod-icons/YEOm54gBOm-96.webp 96w" sizes="auto">
-          
-          <h3>Cloth Config API</h3>
+             <img src="/Minecraft-Mods/img/mod-icons/YEOm54gBOm-48.webp" alt="Ícone de Cloth Config API" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/YEOm54gBOm-48.webp 48w, /Minecraft-Mods/img/mod-icons/YEOm54gBOm-96.webp 96w" sizes="auto"> 
+            <h3>Cloth Config API</h3>
         </div>
 
         
-          <p class="tags">
+        <p class="tags">
             
-              <span class="badge">Biblioteca</span>
+            <span class="badge">Biblioteca</span>
             
-          </p>
-        
-
-        
-          <p class="descricao">Configuration Library for Minecraft Mods</p>
+        </p>
+         
+        <p class="descricao">Configuration Library for Minecraft Mods</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/cloth-config/version/cz0b1j8R" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/shedaniel/ClothConfig/" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/cloth-config/version/cz0b1j8R"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/shedaniel/ClothConfig/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
-      
-    
-  
-    
-      
-      <div class="card" data-categories="optimization utility">
+    </div>
+        
+    <div class="card" data-categories="optimization utility">
         <div class="card-top">
-          
-            <img src="/Minecraft-Mods/img/mod-icons/jLMR-s1-33-48.webp" alt="Ícone de Debugify" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/jLMR-s1-33-48.webp 48w, /Minecraft-Mods/img/mod-icons/jLMR-s1-33-96.webp 96w" sizes="auto">
-          
-          <h3>Debugify</h3>
+             <img src="/Minecraft-Mods/img/mod-icons/jLMR-s1-33-48.webp" alt="Ícone de Debugify" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/jLMR-s1-33-48.webp 48w, /Minecraft-Mods/img/mod-icons/jLMR-s1-33-96.webp 96w" sizes="auto"> 
+            <h3>Debugify</h3>
         </div>
 
         
-          <p class="tags">
+        <p class="tags">
             
-              <span class="badge">Otimização</span>
+            <span class="badge">Otimização</span>
             
-              <span class="badge">Utilidade</span>
+            <span class="badge">Utilidade</span>
             
-          </p>
-        
-
-        
-          <p class="descricao">Fixes Minecraft bugs found on the bug tracker</p>
+        </p>
+         
+        <p class="descricao">Fixes Minecraft bugs found on the bug tracker</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/debugify/version/WLSwJeXa" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/isXander/Debugify/" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/debugify/version/WLSwJeXa"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/isXander/Debugify/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
-      
-    
-  
-    
-      
-      <div class="card" data-categories="optimization">
+    </div>
+        
+    <div class="card" data-categories="optimization">
         <div class="card-top">
-          
-            <img src="/Minecraft-Mods/img/mod-icons/6Jz7EbP4yN-48.webp" alt="Ícone de Entity Culling" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/6Jz7EbP4yN-48.webp 48w, /Minecraft-Mods/img/mod-icons/6Jz7EbP4yN-96.webp 96w" sizes="auto">
-          
-          <h3>Entity Culling</h3>
+             <img src="/Minecraft-Mods/img/mod-icons/6Jz7EbP4yN-48.webp" alt="Ícone de Entity Culling" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/6Jz7EbP4yN-48.webp 48w, /Minecraft-Mods/img/mod-icons/6Jz7EbP4yN-96.webp 96w" sizes="auto"> 
+            <h3>Entity Culling</h3>
         </div>
 
         
-          <p class="tags">
+        <p class="tags">
             
-              <span class="badge">Otimização</span>
+            <span class="badge">Otimização</span>
             
-          </p>
-        
-
-        
-          <p class="descricao">Using async path-tracing to hide Block-/Entities that are not visible</p>
+        </p>
+         
+        <p class="descricao">Using async path-tracing to hide Block-/Entities that are not visible</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/entityculling/version/5wVZFo2d" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/tr7zw/EntityCulling" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/entityculling/version/5wVZFo2d"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/tr7zw/EntityCulling"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
-      
-    
-  
-    
-      
-      <div class="card" data-categories="mobs utility">
+    </div>
+        
+    <div class="card" data-categories="mobs utility">
         <div class="card-top">
-          
-            <img src="/Minecraft-Mods/img/mod-icons/DyBrFpMScX-48.webp" alt="Ícone de [EMF] Entity Model Features" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/DyBrFpMScX-48.webp 48w, /Minecraft-Mods/img/mod-icons/DyBrFpMScX-96.webp 96w" sizes="auto">
-          
-          <h3>[EMF] Entity Model Features</h3>
+             <img src="/Minecraft-Mods/img/mod-icons/DyBrFpMScX-48.webp" alt="Ícone de [EMF] Entity Model Features" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/DyBrFpMScX-48.webp 48w, /Minecraft-Mods/img/mod-icons/DyBrFpMScX-96.webp 96w" sizes="auto"> 
+            <h3>[EMF] Entity Model Features</h3>
         </div>
 
         
-          <p class="tags">
+        <p class="tags">
             
-              <span class="badge">Mobs</span>
+            <span class="badge">Mobs</span>
             
-              <span class="badge">Utilidade</span>
+            <span class="badge">Utilidade</span>
             
-          </p>
-        
-
-        
-          <p class="descricao">EMF is an, OptiFine format, Custom Entity Model replacement mod available for Fabric and Forge.</p>
+        </p>
+         
+        <p class="descricao">EMF is an, OptiFine format, Custom Entity Model replacement mod available for Fabric and Forge.</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/entity-model-features/version/PHCCbdMs" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/Traben-0/Entity_Model_Features" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/entity-model-features/version/PHCCbdMs"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/Traben-0/Entity_Model_Features"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
-      
-    
-  
-    
-      
-      <div class="card" data-categories="decoration utility">
+    </div>
+        
+    <div class="card" data-categories="decoration utility">
         <div class="card-top">
-          
-            <img src="/Minecraft-Mods/img/mod-icons/oz7gTvyQvs-48.webp" alt="Ícone de [ETF] Entity Texture Features" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/oz7gTvyQvs-48.webp 48w, /Minecraft-Mods/img/mod-icons/oz7gTvyQvs-96.webp 96w" sizes="auto">
-          
-          <h3>[ETF] Entity Texture Features</h3>
+             <img src="/Minecraft-Mods/img/mod-icons/oz7gTvyQvs-48.webp" alt="Ícone de [ETF] Entity Texture Features" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/oz7gTvyQvs-48.webp 48w, /Minecraft-Mods/img/mod-icons/oz7gTvyQvs-96.webp 96w" sizes="auto"> 
+            <h3>[ETF] Entity Texture Features</h3>
         </div>
 
         
-          <p class="tags">
+        <p class="tags">
             
-              <span class="badge">Decoração</span>
+            <span class="badge">Decoração</span>
             
-              <span class="badge">Utilidade</span>
+            <span class="badge">Utilidade</span>
             
-          </p>
-        
-
-        
-          <p class="descricao">Emissive, Random &amp; Custom texture support for entities in resourcepacks just like Optifine but for Fabric</p>
+        </p>
+         
+        <p class="descricao">Emissive, Random &amp; Custom texture support for entities in resourcepacks just like Optifine but for Fabric</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/entitytexturefeatures/version/ZGrSwKTR" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/Traben-0/Entity_Texture_Features" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/entitytexturefeatures/version/ZGrSwKTR"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/Traben-0/Entity_Texture_Features"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
-      
-    
-  
-    
-      
-      <div class="card" data-categories="utility">
+    </div>
+        
+    <div class="card" data-categories="utility">
         <div class="card-top">
-          
-            <picture><source type="image/webp" srcset="/Minecraft-Mods/img/mod-icons/prXE9stAf5-48.webp 48w, /Minecraft-Mods/img/mod-icons/prXE9stAf5-96.webp 96w" sizes="auto"><img src="/Minecraft-Mods/img/mod-icons/prXE9stAf5-48.png" alt="Ícone de Fabrishot" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/prXE9stAf5-48.png 48w, /Minecraft-Mods/img/mod-icons/prXE9stAf5-96.png 96w" sizes="auto"></picture>
-          
-          <h3>Fabrishot</h3>
+             <picture><source type="image/webp" srcset="/Minecraft-Mods/img/mod-icons/prXE9stAf5-48.webp 48w, /Minecraft-Mods/img/mod-icons/prXE9stAf5-96.webp 96w" sizes="auto"><img src="/Minecraft-Mods/img/mod-icons/prXE9stAf5-48.png" alt="Ícone de Fabrishot" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/prXE9stAf5-48.png 48w, /Minecraft-Mods/img/mod-icons/prXE9stAf5-96.png 96w" sizes="auto"></picture> 
+            <h3>Fabrishot</h3>
         </div>
 
         
-          <p class="tags">
+        <p class="tags">
             
-              <span class="badge">Utilidade</span>
+            <span class="badge">Utilidade</span>
             
-          </p>
-        
-
-        
-          <p class="descricao">Take insanely large screenshots because why not</p>
+        </p>
+         
+        <p class="descricao">Take insanely large screenshots because why not</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/fabrishot/version/qaV4jqYg" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/ramidzkh/fabrishot" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/fabrishot/version/qaV4jqYg"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/ramidzkh/fabrishot"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
-      
-    
-  
-    
-      
-      <div class="card" data-categories="library">
+    </div>
+        
+    <div class="card" data-categories="library">
         <div class="card-top">
-          
-            <picture><source type="image/webp" srcset="/Minecraft-Mods/img/mod-icons/ZKjc1ihQq_-48.webp 48w, /Minecraft-Mods/img/mod-icons/ZKjc1ihQq_-96.webp 96w" sizes="auto"><img src="/Minecraft-Mods/img/mod-icons/ZKjc1ihQq_-48.png" alt="Ícone de Fabric API" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/ZKjc1ihQq_-48.png 48w, /Minecraft-Mods/img/mod-icons/ZKjc1ihQq_-96.png 96w" sizes="auto"></picture>
-          
-          <h3>Fabric API</h3>
+             <picture><source type="image/webp" srcset="/Minecraft-Mods/img/mod-icons/ZKjc1ihQq_-48.webp 48w, /Minecraft-Mods/img/mod-icons/ZKjc1ihQq_-96.webp 96w" sizes="auto"><img src="/Minecraft-Mods/img/mod-icons/ZKjc1ihQq_-48.png" alt="Ícone de Fabric API" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/ZKjc1ihQq_-48.png 48w, /Minecraft-Mods/img/mod-icons/ZKjc1ihQq_-96.png 96w" sizes="auto"></picture> 
+            <h3>Fabric API</h3>
         </div>
 
         
-          <p class="tags">
+        <p class="tags">
             
-              <span class="badge">Biblioteca</span>
+            <span class="badge">Biblioteca</span>
             
-          </p>
-        
-
-        
-          <p class="descricao">Lightweight and modular API providing common hooks and intercompatibility measures utilized by mods using the Fabric toolchain.</p>
+        </p>
+         
+        <p class="descricao">Lightweight and modular API providing common hooks and intercompatibility measures utilized by mods using the Fabric toolchain.</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/fabric-api/version/e9QZFLr0" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/FabricMC/fabric" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/fabric-api/version/e9QZFLr0"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/FabricMC/fabric"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
-      
-    
-  
-    
-  
-    
-  
-    
-      
-      <div class="card" data-categories="storage utility">
+    </div>
+            
+    <div class="card" data-categories="storage utility">
         <div class="card-top">
-          
-            <picture><source type="image/webp" srcset="/Minecraft-Mods/img/mod-icons/pw70cvVFu2-48.webp 48w, /Minecraft-Mods/img/mod-icons/pw70cvVFu2-96.webp 96w" sizes="auto"><img src="/Minecraft-Mods/img/mod-icons/pw70cvVFu2-48.png" alt="Ícone de Inventory Sorting" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/pw70cvVFu2-48.png 48w, /Minecraft-Mods/img/mod-icons/pw70cvVFu2-96.png 96w" sizes="auto"></picture>
-          
-          <h3>Inventory Sorting</h3>
+             <picture><source type="image/webp" srcset="/Minecraft-Mods/img/mod-icons/pw70cvVFu2-48.webp 48w, /Minecraft-Mods/img/mod-icons/pw70cvVFu2-96.webp 96w" sizes="auto"><img src="/Minecraft-Mods/img/mod-icons/pw70cvVFu2-48.png" alt="Ícone de Inventory Sorting" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/pw70cvVFu2-48.png 48w, /Minecraft-Mods/img/mod-icons/pw70cvVFu2-96.png 96w" sizes="auto"></picture> 
+            <h3>Inventory Sorting</h3>
         </div>
 
         
-          <p class="tags">
+        <p class="tags">
             
-              <span class="badge">Storage</span>
+            <span class="badge">Storage</span>
             
-              <span class="badge">Utilidade</span>
+            <span class="badge">Utilidade</span>
             
-          </p>
-        
-
-        
-          <p class="descricao">Quick, simple, and lightweight inventory sorting</p>
+        </p>
+         
+        <p class="descricao">Quick, simple, and lightweight inventory sorting</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/inventory-sorting/version/3NOyA6Ch" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/KyrptonaughtMC/Inventory-Sorter" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/inventory-sorting/version/3NOyA6Ch"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/KyrptonaughtMC/Inventory-Sorter"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
-      
-    
-  
-    
-      
-      <div class="card" data-categories="decoration optimization">
+    </div>
+        
+    <div class="card" data-categories="decoration optimization">
         <div class="card-top">
-          
-            <img src="/Minecraft-Mods/img/mod-icons/5PbXd9Tm6E-48.webp" alt="Ícone de Iris Shaders" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/5PbXd9Tm6E-48.webp 48w, /Minecraft-Mods/img/mod-icons/5PbXd9Tm6E-96.webp 96w" sizes="auto">
-          
-          <h3>Iris Shaders</h3>
+             <img src="/Minecraft-Mods/img/mod-icons/5PbXd9Tm6E-48.webp" alt="Ícone de Iris Shaders" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/5PbXd9Tm6E-48.webp 48w, /Minecraft-Mods/img/mod-icons/5PbXd9Tm6E-96.webp 96w" sizes="auto"> 
+            <h3>Iris Shaders</h3>
         </div>
 
         
-          <p class="tags">
+        <p class="tags">
             
-              <span class="badge">Decoração</span>
+            <span class="badge">Decoração</span>
             
-              <span class="badge">Otimização</span>
+            <span class="badge">Otimização</span>
             
-          </p>
-        
-
-        
-          <p class="descricao">A modern shader pack loader for Minecraft intended to be compatible with existing OptiFine shader packs</p>
+        </p>
+         
+        <p class="descricao">A modern shader pack loader for Minecraft intended to be compatible with existing OptiFine shader packs</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/iris/version/Rhzf61g1" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/IrisShaders/Iris" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/iris/version/Rhzf61g1"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/IrisShaders/Iris"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
-      
-    
-  
-    
-      
-      <div class="card" data-categories="management utility">
+    </div>
+        
+    <div class="card" data-categories="management utility">
         <div class="card-top">
-          
-            <img src="/Minecraft-Mods/img/mod-icons/GImKXfw-_d-48.webp" alt="Ícone de Item Scroller" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/GImKXfw-_d-48.webp 48w, /Minecraft-Mods/img/mod-icons/GImKXfw-_d-96.webp 96w" sizes="auto">
-          
-          <h3>Item Scroller</h3>
+             <img src="/Minecraft-Mods/img/mod-icons/GImKXfw-_d-48.webp" alt="Ícone de Item Scroller" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/GImKXfw-_d-48.webp 48w, /Minecraft-Mods/img/mod-icons/GImKXfw-_d-96.webp 96w" sizes="auto"> 
+            <h3>Item Scroller</h3>
         </div>
 
         
-          <p class="tags">
+        <p class="tags">
             
-              <span class="badge">Gestão</span>
+            <span class="badge">Gestão</span>
             
-              <span class="badge">Utilidade</span>
+            <span class="badge">Utilidade</span>
             
-          </p>
-        
-
-        
-          <p class="descricao">A client mod that adds many shortcuts to move items easier and craft faster in inventory screens</p>
+        </p>
+         
+        <p class="descricao">A client mod that adds many shortcuts to move items easier and craft faster in inventory screens</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/item-scroller/version/djHu7LSB" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/maruohon/itemscroller/" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/item-scroller/version/djHu7LSB"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/maruohon/itemscroller/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
-      
-    
-  
-    
-      
-      <div class="card" data-categories="adventure decoration utility">
+    </div>
+        
+    <div class="card" data-categories="adventure decoration utility">
         <div class="card-top">
-          
-            <img src="/Minecraft-Mods/img/mod-icons/ExJ1m1_AFV-48.webp" alt="Ícone de LambDynamicLights - Dynamic Lights" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/ExJ1m1_AFV-48.webp 48w, /Minecraft-Mods/img/mod-icons/ExJ1m1_AFV-96.webp 96w" sizes="auto">
-          
-          <h3>LambDynamicLights - Dynamic Lights</h3>
+             <img src="/Minecraft-Mods/img/mod-icons/ExJ1m1_AFV-48.webp" alt="Ícone de LambDynamicLights - Dynamic Lights" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/ExJ1m1_AFV-48.webp 48w, /Minecraft-Mods/img/mod-icons/ExJ1m1_AFV-96.webp 96w" sizes="auto"> 
+            <h3>LambDynamicLights - Dynamic Lights</h3>
         </div>
 
         
-          <p class="tags">
+        <p class="tags">
             
-              <span class="badge">Aventura</span>
+            <span class="badge">Aventura</span>
             
-              <span class="badge">Decoração</span>
+            <span class="badge">Decoração</span>
             
-              <span class="badge">Utilidade</span>
+            <span class="badge">Utilidade</span>
             
-          </p>
-        
-
-        
-          <p class="descricao">Adds dynamic lights to Minecraft as the most feature-complete and optimized dynamic lighting mod.</p>
+        </p>
+         
+        <p class="descricao">Adds dynamic lights to Minecraft as the most feature-complete and optimized dynamic lighting mod.</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/lambdynamiclights/version/b9sK3Xil" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/LambdAurora/LambDynamicLights" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/lambdynamiclights/version/b9sK3Xil"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/LambdAurora/LambDynamicLights"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
-      
-    
-  
-    
-      
-      <div class="card" data-categories="optimization">
+    </div>
+        
+    <div class="card" data-categories="optimization">
         <div class="card-top">
-          
-            <img src="/Minecraft-Mods/img/mod-icons/rFUweUd0at-48.webp" alt="Ícone de Lithium" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/rFUweUd0at-48.webp 48w, /Minecraft-Mods/img/mod-icons/rFUweUd0at-96.webp 96w" sizes="auto">
-          
-          <h3>Lithium</h3>
+             <img src="/Minecraft-Mods/img/mod-icons/rFUweUd0at-48.webp" alt="Ícone de Lithium" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/rFUweUd0at-48.webp 48w, /Minecraft-Mods/img/mod-icons/rFUweUd0at-96.webp 96w" sizes="auto"> 
+            <h3>Lithium</h3>
         </div>
 
         
-          <p class="tags">
+        <p class="tags">
             
-              <span class="badge">Otimização</span>
+            <span class="badge">Otimização</span>
             
-          </p>
-        
-
-        
-          <p class="descricao">No-compromises game logic optimization mod. Well suited for clients and servers of all kinds. Now available for Fabric and NeoForge!</p>
+        </p>
+         
+        <p class="descricao">No-compromises game logic optimization mod. Well suited for clients and servers of all kinds. Now available for Fabric and NeoForge!</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/lithium/version/qxIL7Kb8" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/caffeinemc/lithium-fabric" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/lithium/version/qxIL7Kb8"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/caffeinemc/lithium-fabric"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
-      
-    
-  
-    
-      
-      <div class="card" data-categories="utility">
+    </div>
+        
+    <div class="card" data-categories="utility">
         <div class="card-top">
-          
-            <img src="/Minecraft-Mods/img/mod-icons/H5aPO-b74n-48.webp" alt="Ícone de Logical Zoom" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/H5aPO-b74n-48.webp 48w, /Minecraft-Mods/img/mod-icons/H5aPO-b74n-96.webp 96w" sizes="auto">
-          
-          <h3>Logical Zoom</h3>
+             <img src="/Minecraft-Mods/img/mod-icons/H5aPO-b74n-48.webp" alt="Ícone de Logical Zoom" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/H5aPO-b74n-48.webp 48w, /Minecraft-Mods/img/mod-icons/H5aPO-b74n-96.webp 96w" sizes="auto"> 
+            <h3>Logical Zoom</h3>
         </div>
 
         
-          <p class="tags">
+        <p class="tags">
             
-              <span class="badge">Utilidade</span>
+            <span class="badge">Utilidade</span>
             
-          </p>
-        
-
-        
-          <p class="descricao">A simple zoom key for Minecraft</p>
+        </p>
+         
+        <p class="descricao">A simple zoom key for Minecraft</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/logical-zoom/version/uiolAlpY" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/LogicalGeekBoy/logical_zoom" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/logical-zoom/version/uiolAlpY"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/LogicalGeekBoy/logical_zoom"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
-      
-    
-  
-    
-      
-      <div class="card" data-categories="library utility">
+    </div>
+        
+    <div class="card" data-categories="library utility">
         <div class="card-top">
-          
-            <picture><source type="image/webp" srcset="/Minecraft-Mods/img/mod-icons/iSmPnq0TLo-48.webp 48w, /Minecraft-Mods/img/mod-icons/iSmPnq0TLo-96.webp 96w" sizes="auto"><img src="/Minecraft-Mods/img/mod-icons/iSmPnq0TLo-48.png" alt="Ícone de MaLiLib" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/iSmPnq0TLo-48.png 48w, /Minecraft-Mods/img/mod-icons/iSmPnq0TLo-96.png 96w" sizes="auto"></picture>
-          
-          <h3>MaLiLib</h3>
+             <picture><source type="image/webp" srcset="/Minecraft-Mods/img/mod-icons/iSmPnq0TLo-48.webp 48w, /Minecraft-Mods/img/mod-icons/iSmPnq0TLo-96.webp 96w" sizes="auto"><img src="/Minecraft-Mods/img/mod-icons/iSmPnq0TLo-48.png" alt="Ícone de MaLiLib" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/iSmPnq0TLo-48.png 48w, /Minecraft-Mods/img/mod-icons/iSmPnq0TLo-96.png 96w" sizes="auto"></picture> 
+            <h3>MaLiLib</h3>
         </div>
 
         
-          <p class="tags">
+        <p class="tags">
             
-              <span class="badge">Biblioteca</span>
+            <span class="badge">Biblioteca</span>
             
-              <span class="badge">Utilidade</span>
+            <span class="badge">Utilidade</span>
             
-          </p>
-        
-
-        
-          <p class="descricao">A library mod for client-side mods. Contains most of the common/shared code of masa&#39;s client mods, and adds some inter-operation support between the dependent mods.</p>
+        </p>
+         
+        <p class="descricao">A library mod for client-side mods. Contains most of the common/shared code of masa&#39;s client mods, and adds some inter-operation support between the dependent mods.</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/malilib/version/iS29zBBc" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/maruohon/malilib/" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/malilib/version/iS29zBBc"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/maruohon/malilib/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
-      
-    
-  
-    
-      
-      <div class="card" data-categories="utility">
+    </div>
+        
+    <div class="card" data-categories="utility">
         <div class="card-top">
-          
-            <picture><source type="image/webp" srcset="/Minecraft-Mods/img/mod-icons/tk4ReEcJZt-32.webp 32w"><img src="/Minecraft-Mods/img/mod-icons/tk4ReEcJZt-32.png" alt="Ícone de MiniHUD" class="mod-icon" loading="lazy" decoding="async" width="32" height="32"></picture>
-          
-          <h3>MiniHUD</h3>
+             <picture><source type="image/webp" srcset="/Minecraft-Mods/img/mod-icons/tk4ReEcJZt-32.webp 32w"><img src="/Minecraft-Mods/img/mod-icons/tk4ReEcJZt-32.png" alt="Ícone de MiniHUD" class="mod-icon" loading="lazy" decoding="async" width="32" height="32"></picture> 
+            <h3>MiniHUD</h3>
         </div>
 
         
-          <p class="tags">
+        <p class="tags">
             
-              <span class="badge">Utilidade</span>
+            <span class="badge">Utilidade</span>
             
-          </p>
-        
-
-        
-          <p class="descricao">A &quot;mini F3&quot; HUD mod, also with various overlays like light level, spawn chunks, slime chunks etc.</p>
+        </p>
+         
+        <p class="descricao">A &quot;mini F3&quot; HUD mod, also with various overlays like light level, spawn chunks, slime chunks etc.</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/minihud/version/oqbL8Dfi" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/maruohon/minihud/" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/minihud/version/oqbL8Dfi"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/maruohon/minihud/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
-      
-    
-  
-    
-      
-      <div class="card" data-categories="utility">
+    </div>
+        
+    <div class="card" data-categories="utility">
         <div class="card-top">
-          
-            <img src="/Minecraft-Mods/img/mod-icons/RVR_1PhRWW-48.webp" alt="Ícone de Mod Menu" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/RVR_1PhRWW-48.webp 48w, /Minecraft-Mods/img/mod-icons/RVR_1PhRWW-96.webp 96w" sizes="auto">
-          
-          <h3>Mod Menu</h3>
+             <img src="/Minecraft-Mods/img/mod-icons/RVR_1PhRWW-48.webp" alt="Ícone de Mod Menu" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/RVR_1PhRWW-48.webp 48w, /Minecraft-Mods/img/mod-icons/RVR_1PhRWW-96.webp 96w" sizes="auto"> 
+            <h3>Mod Menu</h3>
         </div>
 
         
-          <p class="tags">
+        <p class="tags">
             
-              <span class="badge">Utilidade</span>
+            <span class="badge">Utilidade</span>
             
-          </p>
-        
-
-        
-          <p class="descricao">Adds a mod menu to view the list of mods you have installed.</p>
+        </p>
+         
+        <p class="descricao">Adds a mod menu to view the list of mods you have installed.</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/modmenu/version/am1Siv7F" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/TerraformersMC/ModMenu" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/modmenu/version/am1Siv7F"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/TerraformersMC/ModMenu"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
-      
-    
-  
-    
-      
-      <div class="card" data-categories="">
+    </div>
+        
+    <div class="card" data-categories="">
         <div class="card-top">
-          
-            <img src="/Minecraft-Mods/img/mod-icons/F6rf3dofG7-48.webp" alt="Ícone de No Telemetry" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/F6rf3dofG7-48.webp 48w, /Minecraft-Mods/img/mod-icons/F6rf3dofG7-96.webp 96w" sizes="auto">
-          
-          <h3>No Telemetry</h3>
+             <img src="/Minecraft-Mods/img/mod-icons/F6rf3dofG7-48.webp" alt="Ícone de No Telemetry" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/F6rf3dofG7-48.webp 48w, /Minecraft-Mods/img/mod-icons/F6rf3dofG7-96.webp 96w" sizes="auto"> 
+            <h3>No Telemetry</h3>
         </div>
 
-        
-
-        
-          <p class="descricao">Disable the telemetry introduced in 21w38a</p>
+         
+        <p class="descricao">Disable the telemetry introduced in 21w38a</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/no-telemetry/version/OwTaGd6A" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/kb-1000/no-telemetry" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/no-telemetry/version/OwTaGd6A"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/kb-1000/no-telemetry"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
-      
-    
-  
-    
-      
-      <div class="card" data-categories="library">
+    </div>
+        
+    <div class="card" data-categories="library">
         <div class="card-top">
-          
-            <picture><source type="image/webp" srcset="/Minecraft-Mods/img/mod-icons/wp9LgzaQSm-48.webp 48w, /Minecraft-Mods/img/mod-icons/wp9LgzaQSm-96.webp 96w" sizes="auto"><img src="/Minecraft-Mods/img/mod-icons/wp9LgzaQSm-48.png" alt="Ícone de Text Placeholder API" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/wp9LgzaQSm-48.png 48w, /Minecraft-Mods/img/mod-icons/wp9LgzaQSm-96.png 96w" sizes="auto"></picture>
-          
-          <h3>Text Placeholder API</h3>
+             <picture><source type="image/webp" srcset="/Minecraft-Mods/img/mod-icons/wp9LgzaQSm-48.webp 48w, /Minecraft-Mods/img/mod-icons/wp9LgzaQSm-96.webp 96w" sizes="auto"><img src="/Minecraft-Mods/img/mod-icons/wp9LgzaQSm-48.png" alt="Ícone de Text Placeholder API" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/wp9LgzaQSm-48.png 48w, /Minecraft-Mods/img/mod-icons/wp9LgzaQSm-96.png 96w" sizes="auto"></picture> 
+            <h3>Text Placeholder API</h3>
         </div>
 
         
-          <p class="tags">
+        <p class="tags">
             
-              <span class="badge">Biblioteca</span>
+            <span class="badge">Biblioteca</span>
             
-          </p>
-        
-
-        
-          <p class="descricao">Placeholder and Text manipulation library for your Minecraft mods.</p>
+        </p>
+         
+        <p class="descricao">Placeholder and Text manipulation library for your Minecraft mods.</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/placeholder-api/version/1S1kjZ9W" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/Patbox/TextPlaceholderAPI" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/placeholder-api/version/1S1kjZ9W"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/Patbox/TextPlaceholderAPI"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
-      
-    
-  
-    
-  
-    
-      
-      <div class="card" data-categories="optimization">
+    </div>
+          
+    <div class="card" data-categories="optimization">
         <div class="card-top">
-          
-            <img src="/Minecraft-Mods/img/mod-icons/s0tQ2HHXeN-48.webp" alt="Ícone de Sodium" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/s0tQ2HHXeN-48.webp 48w, /Minecraft-Mods/img/mod-icons/s0tQ2HHXeN-96.webp 96w" sizes="auto">
-          
-          <h3>Sodium</h3>
+             <img src="/Minecraft-Mods/img/mod-icons/s0tQ2HHXeN-48.webp" alt="Ícone de Sodium" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/s0tQ2HHXeN-48.webp 48w, /Minecraft-Mods/img/mod-icons/s0tQ2HHXeN-96.webp 96w" sizes="auto"> 
+            <h3>Sodium</h3>
         </div>
 
         
-          <p class="tags">
+        <p class="tags">
             
-              <span class="badge">Otimização</span>
+            <span class="badge">Otimização</span>
             
-          </p>
-        
-
-        
-          <p class="descricao">The fastest and most compatible rendering optimization mod for Minecraft. Now available for both NeoForge and Fabric!</p>
+        </p>
+         
+        <p class="descricao">The fastest and most compatible rendering optimization mod for Minecraft. Now available for both NeoForge and Fabric!</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/sodium/version/pJRT8Zxt" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/CaffeineMC/sodium" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/sodium/version/pJRT8Zxt"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/CaffeineMC/sodium"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
-      
-    
-  
-    
-      
-      <div class="card" data-categories="utility">
+    </div>
+        
+    <div class="card" data-categories="utility">
         <div class="card-top">
-          
-            <picture><source type="image/webp" srcset="/Minecraft-Mods/img/mod-icons/FVdHUEvj_T-32.webp 32w"><img src="/Minecraft-Mods/img/mod-icons/FVdHUEvj_T-32.png" alt="Ícone de Tweakeroo" class="mod-icon" loading="lazy" decoding="async" width="32" height="32"></picture>
-          
-          <h3>Tweakeroo</h3>
+             <picture><source type="image/webp" srcset="/Minecraft-Mods/img/mod-icons/FVdHUEvj_T-32.webp 32w"><img src="/Minecraft-Mods/img/mod-icons/FVdHUEvj_T-32.png" alt="Ícone de Tweakeroo" class="mod-icon" loading="lazy" decoding="async" width="32" height="32"></picture> 
+            <h3>Tweakeroo</h3>
         </div>
 
         
-          <p class="tags">
+        <p class="tags">
             
-              <span class="badge">Utilidade</span>
+            <span class="badge">Utilidade</span>
             
-          </p>
-        
-
-        
-          <p class="descricao">Various client-side tweaks, such as hand restock, hotbar swap/cycle, flexible/fast block placement etc.</p>
+        </p>
+         
+        <p class="descricao">Various client-side tweaks, such as hand restock, hotbar swap/cycle, flexible/fast block placement etc.</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/tweakeroo/version/hTIqnpGZ" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/maruohon/tweakeroo/" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/tweakeroo/version/hTIqnpGZ"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/maruohon/tweakeroo/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
-      
-    
-  
-    
-      
-      <div class="card" data-categories="economy game-mechanics mobs">
+    </div>
+        
+    <div class="card" data-categories="economy game-mechanics mobs">
         <div class="card-top">
-          
-            <img src="/Minecraft-Mods/img/mod-icons/MleuNEBL7N-48.webp" alt="Ícone de Visible Traders" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/MleuNEBL7N-48.webp 48w, /Minecraft-Mods/img/mod-icons/MleuNEBL7N-96.webp 96w" sizes="auto">
-          
-          <h3>Visible Traders</h3>
+             <img src="/Minecraft-Mods/img/mod-icons/MleuNEBL7N-48.webp" alt="Ícone de Visible Traders" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/MleuNEBL7N-48.webp 48w, /Minecraft-Mods/img/mod-icons/MleuNEBL7N-96.webp 96w" sizes="auto"> 
+            <h3>Visible Traders</h3>
         </div>
 
         
-          <p class="tags">
+        <p class="tags">
             
-              <span class="badge">Economia</span>
+            <span class="badge">Economia</span>
             
-              <span class="badge">Mecânicas de jogo</span>
+            <span class="badge">Mecânicas de jogo</span>
             
-              <span class="badge">Mobs</span>
+            <span class="badge">Mobs</span>
             
-          </p>
-        
-
-        
-          <p class="descricao">A mod that allows the player to view locked villager trades</p>
+        </p>
+         
+        <p class="descricao">A mod that allows the player to view locked villager trades</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/visible-traders/version/dekfaADl" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/Ramixin/VisibleTraders" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/visible-traders/version/dekfaADl"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/Ramixin/VisibleTraders"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
-      
-    
-  
-    
-      
-      <div class="card" data-categories="library management utility">
+    </div>
+        
+    <div class="card" data-categories="library management utility">
         <div class="card-top">
-          
-            <img src="/Minecraft-Mods/img/mod-icons/DkCS95L68q-48.webp" alt="Ícone de WorldEdit" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/DkCS95L68q-48.webp 48w, /Minecraft-Mods/img/mod-icons/DkCS95L68q-96.webp 96w" sizes="auto">
-          
-          <h3>WorldEdit</h3>
+             <img src="/Minecraft-Mods/img/mod-icons/DkCS95L68q-48.webp" alt="Ícone de WorldEdit" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/DkCS95L68q-48.webp 48w, /Minecraft-Mods/img/mod-icons/DkCS95L68q-96.webp 96w" sizes="auto"> 
+            <h3>WorldEdit</h3>
         </div>
 
         
-          <p class="tags">
+        <p class="tags">
             
-              <span class="badge">Biblioteca</span>
+            <span class="badge">Biblioteca</span>
             
-              <span class="badge">Gestão</span>
+            <span class="badge">Gestão</span>
             
-              <span class="badge">Utilidade</span>
+            <span class="badge">Utilidade</span>
             
-          </p>
-        
-
-        
-          <p class="descricao">A Minecraft Map Editor... that runs in-game!
+        </p>
+         
+        <p class="descricao">A Minecraft Map Editor... that runs in-game!
 With selections, schematics, copy and paste, brushes, and scripting.
 Use it in creative, or use it temporarily in survival.</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/worldedit/version/R846T4GX" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/EngineHub/WorldEdit/" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/worldedit/version/R846T4GX"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/EngineHub/WorldEdit/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
-      
-    
-  
-    
-      
-      <div class="card" data-categories="library management utility">
+    </div>
+        
+    <div class="card" data-categories="library management utility">
         <div class="card-top">
-          
-            <img src="/Minecraft-Mods/img/mod-icons/9UkhJvjyR3-48.webp" alt="Ícone de YetAnotherConfigLib (YACL)" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/9UkhJvjyR3-48.webp 48w, /Minecraft-Mods/img/mod-icons/9UkhJvjyR3-96.webp 96w" sizes="auto">
-          
-          <h3>YetAnotherConfigLib (YACL)</h3>
+             <img src="/Minecraft-Mods/img/mod-icons/9UkhJvjyR3-48.webp" alt="Ícone de YetAnotherConfigLib (YACL)" class="mod-icon" loading="lazy" decoding="async" width="96" height="96" srcset="/Minecraft-Mods/img/mod-icons/9UkhJvjyR3-48.webp 48w, /Minecraft-Mods/img/mod-icons/9UkhJvjyR3-96.webp 96w" sizes="auto"> 
+            <h3>YetAnotherConfigLib (YACL)</h3>
         </div>
 
         
-          <p class="tags">
+        <p class="tags">
             
-              <span class="badge">Biblioteca</span>
+            <span class="badge">Biblioteca</span>
             
-              <span class="badge">Gestão</span>
+            <span class="badge">Gestão</span>
             
-              <span class="badge">Utilidade</span>
+            <span class="badge">Utilidade</span>
             
-          </p>
-        
-
-        
-          <p class="descricao">A builder-based configuration library for Minecraft.</p>
+        </p>
+         
+        <p class="descricao">A builder-based configuration library for Minecraft.</p>
         
 
         <div class="card-footer duplo">
-          
-          
-            
-          
-          <a class="card-button left" href="https://modrinth.com/mod/yacl/version/WxYlHLu6" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download</span>
-          </a>
-          
-            <a class="card-button right" href="https://github.com/isXander/YetAnotherConfigLib" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"/></svg>
-              <span>Repositório</span>
+               
+            <a
+                class="card-button left"
+                href="https://modrinth.com/mod/yacl/version/WxYlHLu6"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
             </a>
-          
+            
+            <a
+                class="card-button right"
+                href="https://github.com/isXander/YetAnotherConfigLib"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.5-.9 1.2-.9 2.2v3.5"
+                    />
+                </svg>
+                <span>Repositório</span>
+            </a>
+            
         </div>
-      </div>
+    </div>
       
-    
-  
 </div>
-</main>
+        </main>
 
-<footer>
-  <a href="https://www.flaticon.com/free-icons/gaming" title="gaming icons">Gaming icons created by Smashicons - Flaticon</a>
-  <p>© 2025 Minecraft Mods - Criado por Eduardo Dezena</p>
-</footer>
+        <footer>
+            <a
+                href="https://www.flaticon.com/free-icons/gaming"
+                title="gaming icons"
+                >Gaming icons created by Smashicons - Flaticon</a
+            >
+            <p>© 2025 Minecraft Mods - Criado por Eduardo Dezena</p>
+        </footer>
 
-<script src="/Minecraft-Mods/js/main.js" defer></script>
-
-</body>
+        <script src="/Minecraft-Mods/js/main.js" defer></script>
+    </body>
 </html>

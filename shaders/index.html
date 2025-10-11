@@ -1,106 +1,388 @@
 <!DOCTYPE html>
 <html lang="pt-BR" data-tema="claro">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Minecraft Mods | Guia de Shaders</title>
-  <script>
-    // Script "Anti-Flash" para definir o tema antes da renderização
-    (function() {
-      function getInitialTheme() {
-        const storedTheme = localStorage.getItem('tema');
-        if (storedTheme) return storedTheme;
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        return systemPrefersDark ? 'escuro' : 'claro';
-      }
-      document.documentElement.setAttribute('data-tema', getInitialTheme());
-    })();
-  </script>
-  <link rel="icon" href="/Minecraft-Mods/favicon.ico">
-  <link rel="stylesheet" href="/Minecraft-Mods/css/main.css" />
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Minecraft Mods | Guia de Shaders</title>
+        <script>
+            (function () {
+                function getInitialTheme() {
+                    const storedTheme = localStorage.getItem("tema");
+                    if (storedTheme) return storedTheme;
+                    const systemPrefersDark = window.matchMedia(
+                        "(prefers-color-scheme: dark)"
+                    ).matches;
+                    return systemPrefersDark ? "escuro" : "claro";
+                }
+                document.documentElement.setAttribute(
+                    "data-tema",
+                    getInitialTheme()
+                );
+            })();
+        </script>
+        <link rel="icon" href="/Minecraft-Mods/favicon.ico" />
+        <link rel="stylesheet" href="/Minecraft-Mods/css/main.css" />
+    </head>
+    <body>
+        <header>
+            <div class="header-container">
+                <a href="/Minecraft-Mods/" class="site-title"
+                    ><picture><source type="image/webp" srcset="/Minecraft-Mods/img/EfLu26rCeg-64.webp 64w"><img src="/Minecraft-Mods/img/EfLu26rCeg-64.jpeg" alt="Logo do site" loading="lazy" decoding="async" width="64" height="64"></picture></a
+                >
 
-<header>
-  <div class="header-container">
-    <a href="/Minecraft-Mods/" class="site-title"><picture><source type="image/webp" srcset="/Minecraft-Mods/img/EfLu26rCeg-64.webp 64w"><img src="/Minecraft-Mods/img/EfLu26rCeg-64.jpeg" alt="Logo do site" loading="lazy" decoding="async" width="64" height="64"></picture></a>
+                <nav class="main-nav-desktop" id="main-nav-desktop">
+                    <a
+                        href="/Minecraft-Mods/mods/"
+                        class=""
+                        >Todos os Mods</a
+                    >
+                    <div class="dropdown wrapper">
+                        <button
+                            class="dropbtn "
+                        >
+                            Versão ▾
+                        </button>
+                        <div class="dropdown-content">
+                            
+                            <div class="dropdown-submenu">
+                                <a href="#">1.21</a>
+                                <div class="dropdown-submenu-content">
+                                    
+                                    <a
+                                        href="/Minecraft-Mods/versoes/1.21.10"
+                                        class=""
+                                        >1.21.10</a
+                                    >
+                                    
+                                    <a
+                                        href="/Minecraft-Mods/versoes/1.21.8"
+                                        class=""
+                                        >1.21.8</a
+                                    >
+                                    
+                                    <a
+                                        href="/Minecraft-Mods/versoes/1.21.7"
+                                        class=""
+                                        >1.21.7</a
+                                    >
+                                    
+                                    <a
+                                        href="/Minecraft-Mods/versoes/1.21.5"
+                                        class=""
+                                        >1.21.5</a
+                                    >
+                                    
+                                    <a
+                                        href="/Minecraft-Mods/versoes/1.21.4"
+                                        class=""
+                                        >1.21.4</a
+                                    >
+                                    
+                                    <a
+                                        href="/Minecraft-Mods/versoes/1.21.0"
+                                        class=""
+                                        >1.21.0</a
+                                    >
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="dropdown-submenu">
+                                <a href="#">1.20</a>
+                                <div class="dropdown-submenu-content">
+                                    
+                                    <a
+                                        href="/Minecraft-Mods/versoes/1.20.4"
+                                        class=""
+                                        >1.20.4</a
+                                    >
+                                    
+                                    <a
+                                        href="/Minecraft-Mods/versoes/1.20.1"
+                                        class=""
+                                        >1.20.1</a
+                                    >
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="dropdown-submenu">
+                                <a href="#">1.19</a>
+                                <div class="dropdown-submenu-content">
+                                    
+                                    <a
+                                        href="/Minecraft-Mods/versoes/1.19.3"
+                                        class=""
+                                        >1.19.3</a
+                                    >
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <a
+                        href="/Minecraft-Mods/tutorial/"
+                        class=""
+                        >Tutorial</a
+                    >
+                    <a
+                        href="/Minecraft-Mods/resourcepacks/"
+                        class=""
+                        >Resource Packs</a
+                    >
+                    <a
+                        href="/Minecraft-Mods/datapacks/"
+                        class=""
+                        >Data Packs</a
+                    >
+                    <a
+                        href="/Minecraft-Mods/shaders/"
+                        class="active"
+                        >Shaders</a
+                    >
+                </nav>
 
-    <button class="mobile-nav-toggle" aria-controls="main-nav" aria-expanded="false">
-      <svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-      <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
-    </button>
-
-    <nav class="main-nav" id="main-nav" data-visible="false">
-      <a href="/Minecraft-Mods/mods/" class="">Todos os Mods</a>
-      <div class="dropdown wrapper">
-        <button class="dropbtn ">Versão ▾</button>
-        <div class="dropdown-content">
-          
-            <div class="dropdown-submenu">
-              <a href="#">1.21</a>
-              <div class="dropdown-submenu-content">
-                
-                  <a href="/Minecraft-Mods/versoes/1.21.10" class="">1.21.10</a>
-                
-                  <a href="/Minecraft-Mods/versoes/1.21.8" class="">1.21.8</a>
-                
-                  <a href="/Minecraft-Mods/versoes/1.21.7" class="">1.21.7</a>
-                
-                  <a href="/Minecraft-Mods/versoes/1.21.5" class="">1.21.5</a>
-                
-                  <a href="/Minecraft-Mods/versoes/1.21.4" class="">1.21.4</a>
-                
-                  <a href="/Minecraft-Mods/versoes/1.21.0" class="">1.21.0</a>
-                
-              </div>
+                <div class="header-controls">
+                    <div class="theme-toggle">
+                        <button class="theme-button" aria-label="Alternar tema">
+                            <svg
+                                class="icon-moon"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                            </svg>
+                            <svg
+                                class="icon-sun"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <circle cx="12" cy="12" r="4" />
+                                <path d="M12 2v2" />
+                                <path d="M12 20v2" />
+                                <path d="m4.93 4.93 1.41 1.41" />
+                                <path d="m17.66 17.66 1.41 1.41" />
+                                <path d="M2 12h2" />
+                                <path d="M20 12h2" />
+                                <path d="m6.34 17.66-1.41 1.41" />
+                                <path d="m19.07 4.93-1.41 1.41" />
+                            </svg>
+                        </button>
+                    </div>
+                    <button
+                        class="mobile-nav-toggle"
+                        aria-controls="main-nav-mobile"
+                        aria-expanded="false"
+                    >
+                        <svg
+                            class="icon-menu"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <line x1="4" x2="20" y1="6" y2="6" />
+                            <line x1="4" x2="20" y1="12" y2="12" />
+                            <line x1="4" x2="20" y1="18" y2="18" />
+                        </svg>
+                        <svg
+                            class="icon-close"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <line x1="18" x2="6" y1="6" y2="18" />
+                            <line x1="6" x2="18" y1="6" y2="18" />
+                        </svg>
+                    </button>
+                </div>
             </div>
-          
-            <div class="dropdown-submenu">
-              <a href="#">1.20</a>
-              <div class="dropdown-submenu-content">
-                
-                  <a href="/Minecraft-Mods/versoes/1.20.4" class="">1.20.4</a>
-                
-                  <a href="/Minecraft-Mods/versoes/1.20.1" class="">1.20.1</a>
-                
-              </div>
-            </div>
-          
-            <div class="dropdown-submenu">
-              <a href="#">1.19</a>
-              <div class="dropdown-submenu-content">
-                
-                  <a href="/Minecraft-Mods/versoes/1.19.3" class="">1.19.3</a>
-                
-              </div>
-            </div>
-          
-        </div>
-      </div>
-      <a href="/Minecraft-Mods/tutorial/" class="">Tutorial</a>
-      <a href="/Minecraft-Mods/resourcepacks/" class="">Resource Packs</a>
-      <a href="/Minecraft-Mods/datapacks/" class="">Data Packs</a>
-      <a href="/Minecraft-Mods/shaders/" class="active">Shaders</a>
-      
-      <div class="theme-toggle-mobile">
-        <button class="theme-button" aria-label="Alternar tema">
-            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-        </button>
-      </div>
-    </nav>
-    
-    <div class="theme-toggle">
-      <button class="theme-button" aria-label="Alternar tema">
-        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-      </button>
-    </div>
-  </div>
-</header>
 
-<main>
-  <h1>Guia de Shaders</h1>
+            <nav
+                class="main-nav-mobile"
+                id="main-nav-mobile"
+                data-visible="false"
+            >
+                <a
+                    href="/Minecraft-Mods/mods/"
+                    class=""
+                    >Todos os Mods</a
+                >
+                <div class="dropdown wrapper">
+                    <button
+                        class="dropbtn "
+                    >
+                        Versão ▾
+                    </button>
+                    <div class="dropdown-content">
+                        
+                        <div class="dropdown-submenu">
+                            <a href="#">1.21</a>
+                            <div class="dropdown-submenu-content">
+                                
+                                <a
+                                    href="/Minecraft-Mods/versoes/1.21.10"
+                                    class=""
+                                    >1.21.10</a
+                                >
+                                
+                                <a
+                                    href="/Minecraft-Mods/versoes/1.21.8"
+                                    class=""
+                                    >1.21.8</a
+                                >
+                                
+                                <a
+                                    href="/Minecraft-Mods/versoes/1.21.7"
+                                    class=""
+                                    >1.21.7</a
+                                >
+                                
+                                <a
+                                    href="/Minecraft-Mods/versoes/1.21.5"
+                                    class=""
+                                    >1.21.5</a
+                                >
+                                
+                                <a
+                                    href="/Minecraft-Mods/versoes/1.21.4"
+                                    class=""
+                                    >1.21.4</a
+                                >
+                                
+                                <a
+                                    href="/Minecraft-Mods/versoes/1.21.0"
+                                    class=""
+                                    >1.21.0</a
+                                >
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="dropdown-submenu">
+                            <a href="#">1.20</a>
+                            <div class="dropdown-submenu-content">
+                                
+                                <a
+                                    href="/Minecraft-Mods/versoes/1.20.4"
+                                    class=""
+                                    >1.20.4</a
+                                >
+                                
+                                <a
+                                    href="/Minecraft-Mods/versoes/1.20.1"
+                                    class=""
+                                    >1.20.1</a
+                                >
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="dropdown-submenu">
+                            <a href="#">1.19</a>
+                            <div class="dropdown-submenu-content">
+                                
+                                <a
+                                    href="/Minecraft-Mods/versoes/1.19.3"
+                                    class=""
+                                    >1.19.3</a
+                                >
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <a
+                    href="/Minecraft-Mods/tutorial/"
+                    class=""
+                    >Tutorial</a
+                >
+                <a
+                    href="/Minecraft-Mods/resourcepacks/"
+                    class=""
+                    >Resource Packs</a
+                >
+                <a
+                    href="/Minecraft-Mods/datapacks/"
+                    class=""
+                    >Data Packs</a
+                >
+                <a
+                    href="/Minecraft-Mods/shaders/"
+                    class="active"
+                    >Shaders</a
+                >
+                <div class="theme-toggle-mobile">
+                    <button class="theme-button" aria-label="Alternar tema">
+                        <svg
+                            class="icon-moon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                        </svg>
+                        <svg
+                            class="icon-sun"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M12 2v2" />
+                            <path d="M12 20v2" />
+                            <path d="m4.93 4.93 1.41 1.41" />
+                            <path d="m17.66 17.66 1.41 1.41" />
+                            <path d="M2 12h2" />
+                            <path d="M20 12h2" />
+                            <path d="m6.34 17.66-1.41 1.41" />
+                            <path d="m19.07 4.93-1.41 1.41" />
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <h1>Guia de Shaders</h1>
 <p>Shaders são modificações gráficas que revolucionam completamente o visual do Minecraft. Eles adicionam iluminação realista, sombras que se movem com o sol, água com reflexos e ondulações, vento que balança as folhas das árvores e muito mais. É a forma mais impactante de transformar a aparência do seu jogo.</p>
 <p>Para usar shaders, você <strong>precisa</strong> de um mod que dê esse suporte. Atualmente, a melhor opção para Fabric é o <strong>Iris</strong>.</p>
 <hr>
@@ -125,9 +407,7 @@
 <p><strong>Ative o Shader:</strong> Volte para o menu do jogo. O novo shader aparecerá na lista. Clique sobre ele e depois em &quot;Aplicar&quot;. O jogo vai recarregar e o novo visual estará ativo.</p>
 </li>
 </ol>
-<blockquote>
 <p><strong>Aviso:</strong> Shaders podem ser bem pesados e exigir bastante do seu computador. Se o jogo ficar lento, experimente um shader mais &quot;leve&quot; ou diminua as configurações de qualidade dentro das opções do próprio shader.</p>
-</blockquote>
 <hr>
 <h2>Shaders Recomendados</h2>
 <ul>
@@ -136,14 +416,17 @@
 <li><strong><a href="https://sildurs-shaders.github.io/">Sildur's Vibrant Shaders</a>:</strong> Um clássico. Como o nome diz, ele realça as cores e cria um ambiente muito mais vivo e vibrante, com fortes efeitos de luz do sol.</li>
 </ul>
 
-</main>
+        </main>
 
-<footer>
-  <a href="https://www.flaticon.com/free-icons/gaming" title="gaming icons">Gaming icons created by Smashicons - Flaticon</a>
-  <p>© 2025 Minecraft Mods - Criado por Eduardo Dezena</p>
-</footer>
+        <footer>
+            <a
+                href="https://www.flaticon.com/free-icons/gaming"
+                title="gaming icons"
+                >Gaming icons created by Smashicons - Flaticon</a
+            >
+            <p>© 2025 Minecraft Mods - Criado por Eduardo Dezena</p>
+        </footer>
 
-<script src="/Minecraft-Mods/js/main.js" defer></script>
-
-</body>
+        <script src="/Minecraft-Mods/js/main.js" defer></script>
+    </body>
 </html>

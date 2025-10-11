@@ -1,5 +1,3 @@
-// Arquivo: src\js\main.js
-
 document.addEventListener("DOMContentLoaded", () => {
     // --- LÓGICA DO TEMA ---
     const themeButtons = document.querySelectorAll(".theme-button");
@@ -7,18 +5,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (themeButtons.length > 0) {
         themeButtons.forEach((button) => {
-            button.addEventListener("click", () => {
+            button.addEventListener("click", (e) => {
+                e.stopPropagation();
                 const currentTheme = htmlEl.getAttribute("data-tema");
                 const newTheme = currentTheme === "escuro" ? "claro" : "escuro";
                 localStorage.setItem("tema", newTheme);
                 htmlEl.setAttribute("data-tema", newTheme);
-
-                // Aplica a rotação a todos os botões de tema
                 document
                     .querySelectorAll(".theme-button")
                     .forEach((btn) => btn.classList.add("is-rotating"));
             });
-
             button.addEventListener("transitionend", () => {
                 document
                     .querySelectorAll(".theme-button")
@@ -28,45 +24,57 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // --- LÓGICA DO MENU MOBILE ---
-    const mainNav = document.querySelector(".main-nav");
+    const mobileNav = document.querySelector(".main-nav-mobile");
     const navToggle = document.querySelector(".mobile-nav-toggle");
 
-    if (mainNav && navToggle) {
-        navToggle.addEventListener("click", () => {
-            const isVisible = mainNav.getAttribute("data-visible") === "true";
+    if (mobileNav && navToggle) {
+        navToggle.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const isVisible = mobileNav.getAttribute("data-visible") === "true";
+
             if (isVisible) {
-                mainNav.setAttribute("data-visible", "false");
+                mobileNav.setAttribute("data-visible", "false");
                 navToggle.setAttribute("aria-expanded", "false");
+                document.body.classList.remove("nav-is-open"); // REFINAMENTO
             } else {
-                mainNav.setAttribute("data-visible", "true");
+                mobileNav.setAttribute("data-visible", "true");
                 navToggle.setAttribute("aria-expanded", "true");
+                document.body.classList.add("nav-is-open"); // REFINAMENTO
             }
         });
     }
 
-    // --- LÓGICA DOS DROPDOWNS COM CLIQUE ---
+    // --- LÓGICA DOS DROPDOWNS (UNIFICADA) ---
     const dropdowns = document.querySelectorAll(".dropdown");
     dropdowns.forEach((dropdown) => {
-        const trigger = dropdown.querySelector(
+        const triggers = dropdown.querySelectorAll(
             ".dropbtn, .dropdown-submenu > a"
         );
-
-        if (trigger) {
+        triggers.forEach((trigger) => {
             trigger.addEventListener("click", (event) => {
-                // Para o comportamento de toque (mobile)
                 if (window.innerWidth <= 768) {
-                    event.preventDefault(); // Impede que o link '#' navegue
+                    event.preventDefault();
                     const parent =
                         trigger.closest(".dropdown-submenu") ||
                         trigger.closest(".dropdown");
                     parent.classList.toggle("is-open");
                 }
             });
-        }
+        });
     });
 
-    // Fecha todos os dropdowns se clicar fora deles
+    // Fecha todos os menus ao clicar fora
     document.addEventListener("click", (event) => {
+        // Fecha o menu mobile se o clique for fora dele
+        if (
+            mobileNav.getAttribute("data-visible") === "true" &&
+            !event.target.closest(".main-nav-mobile") &&
+            !event.target.closest(".mobile-nav-toggle")
+        ) {
+            mobileNav.setAttribute("data-visible", "false");
+            navToggle.setAttribute("aria-expanded", "false");
+        }
+        // Fecha os dropdowns se o clique for fora deles
         if (!event.target.closest(".dropdown")) {
             dropdowns.forEach((dropdown) => {
                 dropdown.classList.remove("is-open");

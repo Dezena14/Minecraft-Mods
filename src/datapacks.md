@@ -23,7 +23,7 @@ A instalação é feita por mundo. Siga os passos para o mundo em que você quer
 
 4.  **Ative no Jogo:** Se você já estiver com o mundo aberto, apenas digite o comando `/reload` no chat. Se o mundo estava fechado, basta abri-lo. As funcionalidades já estarão ativas!
 
-> **Dica:** Você pode adicionar quantos data packs quiser. Se um dia quiser remover a funcionalidade, basta apagar o arquivo `.zip` correspondente da pasta `datapacks`.
+**Dica:** Você pode adicionar quantos data packs quiser. Se um dia quiser remover a funcionalidade, basta apagar o arquivo `.zip` correspondente da pasta `datapacks`.
 
 ---
 ## Packs Recomendados (do Vanilla Tweaks)

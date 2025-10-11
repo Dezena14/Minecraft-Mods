@@ -30,45 +30,7 @@
                     >{% image "img/ghost.png", "Logo do site", [64] %}</a
                 >
 
-                <button
-                    class="mobile-nav-toggle"
-                    aria-controls="main-nav"
-                    aria-expanded="false"
-                >
-                    <svg
-                        class="icon-menu"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    >
-                        <line x1="4" x2="20" y1="6" y2="6" />
-                        <line x1="4" x2="20" y1="12" y2="12" />
-                        <line x1="4" x2="20" y1="18" y2="18" />
-                    </svg>
-                    <svg
-                        class="icon-close"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    >
-                        <line x1="18" x2="6" y1="6" y2="18" />
-                        <line x1="6" x2="18" y1="6" y2="18" />
-                    </svg>
-                </button>
-
-                <nav class="main-nav" id="main-nav" data-visible="false">
+                <nav class="main-nav-desktop" id="main-nav-desktop">
                     <a
                         href="{{ '/mods/' | url }}"
                         class="{% if page.url == '/mods/' %}active{% endif %}"
@@ -76,7 +38,7 @@
                     >
                     <div class="dropdown wrapper">
                         <button
-                            class="dropbtn {% if page.url and page.url.indexOf('/versoes/') == 0 %} active{% endif %}"
+                            class="dropbtn {% if 'versoes' in page.url %}active{% endif %}"
                         >
                             Versão ▾
                         </button>
@@ -118,8 +80,10 @@
                         class="{% if page.url == '/shaders/' %}active{% endif %}"
                         >Shaders</a
                     >
+                </nav>
 
-                    <div class="theme-toggle-mobile">
+                <div class="header-controls">
+                    <div class="theme-toggle">
                         <button class="theme-button" aria-label="Alternar tema">
                             <svg
                                 class="icon-moon"
@@ -159,9 +123,101 @@
                             </svg>
                         </button>
                     </div>
-                </nav>
+                    <button
+                        class="mobile-nav-toggle"
+                        aria-controls="main-nav-mobile"
+                        aria-expanded="false"
+                    >
+                        <svg
+                            class="icon-menu"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <line x1="4" x2="20" y1="6" y2="6" />
+                            <line x1="4" x2="20" y1="12" y2="12" />
+                            <line x1="4" x2="20" y1="18" y2="18" />
+                        </svg>
+                        <svg
+                            class="icon-close"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <line x1="18" x2="6" y1="6" y2="18" />
+                            <line x1="6" x2="18" y1="6" y2="18" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
 
-                <div class="theme-toggle">
+            <nav
+                class="main-nav-mobile"
+                id="main-nav-mobile"
+                data-visible="false"
+            >
+                <a
+                    href="{{ '/mods/' | url }}"
+                    class="{% if page.url == '/mods/' %}active{% endif %}"
+                    >Todos os Mods</a
+                >
+                <div class="dropdown wrapper">
+                    <button
+                        class="dropbtn {% if 'versoes' in page.url %}active{% endif %}"
+                    >
+                        Versão ▾
+                    </button>
+                    <div class="dropdown-content">
+                        {% for group, versions in collections.versoesAgrupadas
+                        %}
+                        <div class="dropdown-submenu">
+                            <a href="#">{{ group }}</a>
+                            <div class="dropdown-submenu-content">
+                                {% for versao in versions %}
+                                <a
+                                    href="{{ ('/versoes/' ~ versao) | url }}"
+                                    class="{% if page.url == '/versoes/' ~ versao %}active{% endif %}"
+                                    >{{ versao }}</a
+                                >
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <a
+                    href="{{ '/tutorial/' | url }}"
+                    class="{% if page.url == '/tutorial/' %}active{% endif %}"
+                    >Tutorial</a
+                >
+                <a
+                    href="{{ '/resourcepacks/' | url }}"
+                    class="{% if page.url == '/resourcepacks/' %}active{% endif %}"
+                    >Resource Packs</a
+                >
+                <a
+                    href="{{ '/datapacks/' | url }}"
+                    class="{% if page.url == '/datapacks/' %}active{% endif %}"
+                    >Data Packs</a
+                >
+                <a
+                    href="{{ '/shaders/' | url }}"
+                    class="{% if page.url == '/shaders/' %}active{% endif %}"
+                    >Shaders</a
+                >
+                <div class="theme-toggle-mobile">
                     <button class="theme-button" aria-label="Alternar tema">
                         <svg
                             class="icon-moon"
@@ -201,9 +257,8 @@
                         </svg>
                     </button>
                 </div>
-            </div>
+            </nav>
         </header>
-
         <main>
             {{ content | safe }}
         </main>

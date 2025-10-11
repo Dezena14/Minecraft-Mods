@@ -21,7 +21,7 @@ A instalação é global, ou seja, uma vez instalados, eles ficam disponíveis p
 
 4.  **Confirme e Espere:** Clique em "Concluído". O jogo pode demorar alguns segundos para recarregar as texturas. Pronto, o novo visual já está aplicado!
 
-> **Dica:** Você pode empilhar vários resource packs! O que estiver mais no topo da lista de "Selecionados" terá prioridade sobre os que estão abaixo.
+**Dica:** Você pode empilhar vários resource packs! O que estiver mais no topo da lista de "Selecionados" terá prioridade sobre os que estão abaixo.
 
 ---
 

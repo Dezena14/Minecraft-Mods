@@ -25,7 +25,7 @@ Para usar shaders, você **precisa** de um mod que dê esse suporte. Atualmente,
 
 6.  **Ative o Shader:** Volte para o menu do jogo. O novo shader aparecerá na lista. Clique sobre ele e depois em "Aplicar". O jogo vai recarregar e o novo visual estará ativo.
 
-> **Aviso:** Shaders podem ser bem pesados e exigir bastante do seu computador. Se o jogo ficar lento, experimente um shader mais "leve" ou diminua as configurações de qualidade dentro das opções do próprio shader.
+**Aviso:** Shaders podem ser bem pesados e exigir bastante do seu computador. Se o jogo ficar lento, experimente um shader mais "leve" ou diminua as configurações de qualidade dentro das opções do próprio shader.
 
 ---
 

@@ -88,6 +88,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/css");
     eleventyConfig.addPassthroughCopy("src/js");
     eleventyConfig.addPassthroughCopy({ "src/img/favicon.ico": "favicon.ico" });
+    eleventyConfig.addPassthroughCopy("src/CNAME");
 
     // --- Shortcode de Imagem ---
     eleventyConfig.addNunjucksAsyncShortcode(
@@ -95,10 +96,7 @@ module.exports = function (eleventyConfig) {
         async function (src, alt, widths = [64]) {
             if (!src) return "";
             let srcFull = `./src/${src.replace(/^\//, "")}`;
-            const pathPrefix =
-                process.env.ELEVENTY_RUN_MODE === "build"
-                    ? "/Minecraft-Mods"
-                    : "";
+            const pathPrefix = "";
 
             try {
                 let metadata = await Image(srcFull, {
@@ -125,10 +123,7 @@ module.exports = function (eleventyConfig) {
         "remoteImage",
         async function (src, alt, classes) {
             if (!src) return "";
-            const pathPrefix =
-                process.env.ELEVENTY_RUN_MODE === "build"
-                    ? "/Minecraft-Mods"
-                    : "";
+            const pathPrefix = "";
             try {
                 let metadata = await Image(src, {
                     widths: [48, 96],

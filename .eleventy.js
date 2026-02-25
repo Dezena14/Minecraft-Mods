@@ -251,6 +251,7 @@ module.exports = function (eleventyConfig) {
     // --- Configuração de diretórios ---
     return {
         dir: {
+            pathPrefix: "/",
             input: "src",
             includes: "_includes",
             data: "_data",
